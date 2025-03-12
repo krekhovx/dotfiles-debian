@@ -500,6 +500,7 @@ nnoremap <c-u> <c-w>x
 
 " ----
 
+set notrash
 noremap = :sync<CR>
 nnoremap - :cd -<cr>
 nnoremap q :q<cr>
