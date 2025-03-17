@@ -14,8 +14,8 @@ color listfocus_unread blue default reverse bold
 goto-next-feed no
 browser firefox
 
-bind-key j down feedlist
 bind-key k up feedlist
+bind-key j down feedlist
 bind-key j next articlelist
 bind-key k prev articlelist
 bind-key J next-feed articlelist
@@ -33,6 +33,6 @@ bind-key n next-unread
 bind-key N prev-unread
 bind-key i toggle-article-read
 
-#show-read-feeds no
 #confirm-exit no
+#show-read-feeds no
 #cleanup-on-quit no
