@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/krekhovx/dotfiles-debian/blob/master/images/logo-color.png">
+<img src="https://github.com/krekhovx/dotfiles-debian/blob/master/images/logo-color.jpg">
 </div>
 
 ## My Debian Dotfiles
