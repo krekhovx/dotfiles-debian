@@ -54,17 +54,8 @@ cat << EOF
 Usage: $(basename $0) [option]
 
   [option]
-  --initd                operations before shutdown/reboot
-                         /etc/init.d/clean-env script (amnesia)
 
-  --hosts                hosts installation
-                         /etc/hosts
-
-  --sysctl               kernel parameters installation
-                         /etc/sysctl.conf
-
-  --sources.list         the latest up-to-date Debian repositories
-                         sources.list installation
+  --sources.list         sources.list installation
 
   --install-packages     install useful packages
 
@@ -123,31 +114,9 @@ exit 0
 
 for arg in "$@"; do
         case "$arg" in
-		"--initd")
-			bold_message "init.d script for user home directory (amnesia)"
-			sudo cp -v ./root/etc/init.d/clean-env /etc/init.d
-			sudo ln -s /etc/init.d/clean-env /etc/rc5.d/S00clean-env &>/dev/null | true
-			sudo ln -s /etc/init.d/clean-env /etc/rc6.d/K00clean-env &>/dev/null | true
-			sudo systemctl daemon-reload
-			sudo systemctl restart clean-env.service
-		;;
-
-                "--hosts")
-			bold_message "Hosts installation"
-			sudo cp -v ./root/etc/hosts /etc/hosts
-			sudo sed -i "s/<MY-HOSTNAME>/$(hostname)/" /etc/hosts &>/dev/null
-		;;
-
-                "--sysctl")
-			bold_message "Kernel parameters installation"
-			sudo cp -v ./root/etc/sysctl.conf /etc/sysctl.conf
-			sudo sysctl -p
-			echo "Core file size: $(ulimit -c)"
-		;;
-
 		"--sources.list")
 			bold_message "sources.list installation"
-			sudo cp -v ./root/etc/apt/sources.list /etc/apt/
+			sudo cp -v ./sources.list /etc/apt/
 			sudo apt-get update
 		;;
 

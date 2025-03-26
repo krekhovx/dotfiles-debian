@@ -3,13 +3,15 @@
 </div>
 
 ## My Debian Dotfiles
-This is my Debian dotfiles (backup). Configuration files, useful scripts and aliases for my work, backgrounds,
-notes, hotkeys, various development tools, color schemes, etc. There are not only dotfiles here, but also
-some normal files that can be in ```/etc```.
+This is my Debian dotfiles (backup). Configuration files, useful scripts and
+aliases for my work, backgrounds, notes, hotkeys, various development tools,
+color schemes, etc. There are not only dotfiles here, but also some normal files
+that can be in ```/etc```.
 
-I'm lazy, so there's a script [init](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
-which initialize/configure my work environment automatically. I am using the latest stable version
-of Debian with Xfce.
+I'm lazy, so there's a script
+[init](https://github.com/krekhovx/dotfiles-debian/blob/master/init) which
+initialize/configure my work environment automatically. I am using the latest
+stable version of Debian with Xfce.
 
 The repository is updated frequently.
 
@@ -55,7 +57,8 @@ Usage information:
 ```
 $ ./init --help
 ```
-**Attention**. Be careful when running this script on your main machine, it does not create backup dotfiles and may ~~erase~~ your current working environment.
+**Attention**. Be careful when running this script on your main machine, it does
+not create backup dotfiles and may ~~erase~~ your current working environment.
 
 Clean home, update ```/etc/apt/sources.list```, install required packages:
 ```
