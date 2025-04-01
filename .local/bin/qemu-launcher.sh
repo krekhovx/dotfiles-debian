@@ -30,9 +30,10 @@ case "$1" in
 	;;
 
 '-qd'|'--qemu-tempdisk')
-	f=$(mktemp)
-	qemu-img create -f qcow2 "/tmp/$f.img" 12G
+	f=$(basename $(mktemp))
+	qemu-img create -f qcow2 "/tmp/$f.img" 20G
 	qemu-system-x86_64 -boot d -cdrom "$2" -m 2048 -hda "/tmp/$f.img"
+	rm "/tmp/$f.img"
 	;;
 
 '-h'|'--help')
