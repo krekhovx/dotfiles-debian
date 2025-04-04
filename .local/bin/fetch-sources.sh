@@ -28,6 +28,7 @@ get_sources()
 	done
 }
 
+apt-get update
 get_sources "misc" "${misc_packages[*]}"
 get_sources "xfce" "${xfce_packages[*]}"
 get_sources "vim" "${vim_packages[*]}"

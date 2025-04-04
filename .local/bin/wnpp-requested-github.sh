@@ -32,7 +32,7 @@ for n in $(cat /tmp/rev); do
 	| grep -A 1 -E '\*? URL[^:]*:' | grep -Eo 'href="[^"]+"' | grep 'https://github.com' \
 	| awk -F'"' '{print $2}')
 
-	if [ ! -z "$github" ]; then
+	if [ -n "$github" ]; then
 		echo "https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=${n}"
 		echo -e "$github\n"
 	fi

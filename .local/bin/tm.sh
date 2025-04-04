@@ -3,7 +3,7 @@
 # Simple timer with a signal.
 #
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
 	echo "aplay ~/.local/share/prompt.wav" | \
 	at now + "$1" minute
 else

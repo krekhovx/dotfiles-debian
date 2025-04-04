@@ -57,7 +57,7 @@ git_command()
 			current_branch="$(git branch | grep '*' | awk '{print $2}')"
 			branch_count="$(git branch | wc -l)"
 
-			if (( $branch_count > 1 )); then
+			if (( branch_count > 1 )); then
 				# git pull from all have branches
 				# I want actual git log
 				branches=$(git branch --format='%(refname:short)')

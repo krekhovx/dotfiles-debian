@@ -3,7 +3,7 @@
 # Create a compressed tar archive (.tar.xz) of a specified directory.
 #
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
 	dir="$1"
 	archive_name="${dir%/}.tar.xz"
 	tar -cvJf "$archive_name" "$dir"

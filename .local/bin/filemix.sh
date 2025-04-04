@@ -9,7 +9,7 @@ generate_random_string()
 	cat /dev/urandom | tr -dc 'a-z0-9' | head -c 12
 }
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
 	for file in *.$1; do
 		s=$(generate_random_string)
 

@@ -6,14 +6,14 @@
 # $ source-uris.sh scp
 #
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
 	cmdpath=$(which "$1" 2>/dev/null)
 
-	if [ ! -z "$cmdpath" ]; then
+	if [ -n "$cmdpath" ]; then
 		pack=$(dpkg -S "$cmdpath" 2>/dev/null | awk '{print $1}' | sed 's/:$//')
 	fi
 
-	if [ ! -z "$pack" ]; then
+	if [ -n "$pack" ]; then
 		sudo apt-get source --print-uris "$pack" 2>&1 | awk '
 		/^NOTICE:/ {print $NF}
 		/http/ {

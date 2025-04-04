@@ -3,7 +3,7 @@
 # Create a compressed tar archive (.tar.gz) of a specified directory.
 #
 
-if [ ! -z "$1" ]; then
+if [ -n "$1" ]; then
 	dir="$1"
 	archive_name="${dir%/}.tar.gz"
 	tar -cvzf "$archive_name" "$dir"
