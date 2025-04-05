@@ -42,7 +42,6 @@ Another one (last screenshot):
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>Mail Client:</strong> ```Neomutt```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
-- <strong>Additional packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
 - Install Debian with Xfce.
@@ -60,9 +59,9 @@ $ ./init --help
 **Attention**. Be careful when running this script on your main machine, it does
 not create backup dotfiles and may ~~erase~~ your current working environment.
 
-Clean home, update ```/etc/apt/sources.list```, install required packages:
+Clean home, update ```/etc/apt/sources.list```:
 ```
-$ ./init --clean-home --sources.list --install-packages
+$ ./init --clean-home --sources.list
 ```
 
 Configure $HOME environment:
@@ -103,8 +102,7 @@ parses ```/var/log/apt/history.log``` to extract installation dates and package 
 get source uris.<br/>
 
 ## My favorite fonts
-I use these fonts from time to time in my terminal.<br/>
-These fonts are installed using [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
+I use these fonts from time to time in my terminal.
 
 ```
 > glass tty vt220 bold

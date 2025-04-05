@@ -57,8 +57,6 @@ Usage: $(basename $0) [option]
 
   --sources.list         sources.list installation
 
-  --install-packages     install useful packages
-
   --clean-home           cleanup home directory, configure user-dirs.*
 
   --bashrc               ~/.bashrc extra rules installation
@@ -118,87 +116,6 @@ for arg in "$@"; do
 			bold_message "sources.list installation"
 			sudo cp -v ./sources.list /etc/apt/
 			sudo apt-get update
-		;;
-
-		"--install-packages")
-			# Git
-			git=(tig git git-lfs)
-
-			# Mail and News
-			mn=(neomutt newsboat)
-
-			# Fun
-			fun=(oneko cowsay toilet figlet)
-
-			# Virtualization
-			virt=(qemu-system qemu-utils)
-
-			# Terminal Tools
-			tt=(mc vim vim-gtk3 vifm nano tmux xterm mousepad unclutter unclutter-startup)
-
-			# Fonts
-			fonts=(font-manager fonts-unifont fonts-hack fonts-glasstty \
-			fonts-ibm-plex xfonts-terminus)
-
-			# Documentation
-			doc=(info man-db mandoc gcc-doc manpages linux-doc manpages-dev \
-			manpages-posix manpages-posix-dev)
-
-			# Debian Maintenance
-			deb=(cdbs blhc duck quilt equivs lintian tasksel apt-file dpkg-dev \
-			aptitude piuparts adequate pbuilder debhelper reportbug devscripts \
-			debootstrap licensecheck debconf-utils how-can-i-help \
-			build-essential git-buildpackage live-build synaptic)
-
-			# Localization
-			loc=(manpages-ru manpages-ru-dev \
-			task-russian task-russian-desktop firefox-esr-l10n-ru)
-
-			# Network Operations
-			net=(curl wget nmap ssh sshpass tcpdump dnsutils net-tools \
-			netcat-traditional traceroute rtorrent dirmngr whois iputils-ping)
-
-			# Graphic and Multimedia Applications
-			gui=(audacious telegram-desktop gnome-screensaver simplescreenrecorder \
-			system-config-printer simple-scan firefox-esr galculator gparted vlc \
-			pavucontrol ristretto xfburn peek)
-
-			# Command Line Utilities
-			clu=(fzf fzy xsel ripgrep bash-completion)
-
-			# Development and Compilation Tools
-			dev=(gdb gcc gawk perl perl-base make cmake strace binutils valgrind pkg-config \
-			gobject-introspection exuberant-ctags autotools-dev pristine-tar automake \
-			autoconf dh-make)
-
-			# System Utilities and Administration
-			sys=(systemd-coredump moreutils whiptail dialog psmisc hwinfo indent patch \
-			wipe file cups fakeroot patchutils python3-pip shc gpg tree lsof gettext \
-			neofetch dconf-cli cryptsetup p7zip-full unzip bzip2 zip fdisk nfs-common)
-
-			packs=("${git[*]}" "${mn[*]}" "${fun[*]}" "${virt[*]}" "${tt[*]}" "${fonts[*]}" \
-			"${doc[*]}" "${deb[*]}" "${loc[*]}" "${net[*]}" "${gui[*]}" "${clu[*]}" "${dev[*]}" \
-			"${sys[*]}")
-
-			bold_message "Install useful packages"
-			sudo apt-get update
-
-			if ! check_package eatmydata; then
-				>&2 echo "Please, install 'eatmydata' package"
-				exit 1
-			fi
-
-			set +e
-			for p in ${packs[*]}; do
-				if ! check_package $p; then
-					sudo eatmydata apt-get -y install $p
-					echo -e "$?\n"
-				fi
-			done
-			set -e
-
-			sudo mandb
-			sudo apt-file update
 		;;
 
 		"--clean-home")
