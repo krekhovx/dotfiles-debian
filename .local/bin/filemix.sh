@@ -6,7 +6,7 @@
 
 generate_random_string()
 {
-	cat /dev/urandom | tr -dc 'a-z0-9' | head -c 12
+	tr -dc 'a-z0-9' < /dev/urandom | head -c 12
 }
 
 if [ -n "$1" ]; then

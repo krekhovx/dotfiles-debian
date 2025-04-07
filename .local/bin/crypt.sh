@@ -15,8 +15,8 @@ Use AES 256 (Advanced Encryption Standard) cipher
 for symmetric file encrypt/decrypt.
 
   [option]
-  -f, --file </path/to/file>    specify file (regular or openssl)
-  -h, --help                    show this help and exit
+  -f, --file </path/to/file>     specify file (regular or openssl)
+  -h, --help                     show this help and exit
 
 EOF
 
@@ -36,7 +36,7 @@ case "$1" in
 		exit 1
 	fi
 
-	randf=".$(cat /dev/urandom | tr -dc 'a-z0-9' | head -c 8)"
+	randf=".$(tr -dc 'a-z0-9' < /dev/urandom | head -c 8)"
 
 	while true; do
 		if file "$2" | grep -E "openssl|salted"; then

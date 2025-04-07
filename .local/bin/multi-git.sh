@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 #
-# Execute specified Git commands across all specified Git projects, such as
-# 'clone', 'pull' or 'status' (simple git operations), for streamlined
-# multi-repo management.
+# Execute Git commands like 'clone', 'pull', or 'status' across multiple Git
+# projects for easy management.
 #
 
 usage()
 {
 if (( $1 )); then
-        >&2 echo "Try '$(basename $0) --help' for more information."
-        exit 1
+	>&2 echo "Try '$(basename $0) --help' for more information."
+	exit 1
 else
 cat << EOF
 $(echo -e "\e[96mUsage: $(basename $0) [options]\e[0m")
 Multiple Git Control (simple git operations).
 
+  [option]
   -ck, --clone-krekhovx                     clone my GitHub projects in current directory
   -cs, --clone-salsa                        clone my favorite Salsa projects in current directory
   -p, --pull </path/to/git/projects>        pull from the specified Git projects, all branches

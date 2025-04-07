@@ -6,17 +6,17 @@
 usage()
 {
 if [ $1 -eq 1 ]; then
-        >&2 echo "Try '$(basename $0) --help' for more information."
-        exit 1
+	>&2 echo "Try '$(basename $0) --help' for more information."
+	exit 1
 else
 cat << EOF
 Usage: $(basename $0) [option]
 Automate message writing and GPG signing.
 
   [option]
-  -c, --clearsign     clear-sign and copy
-  -d, --detachsign    detach-sign and copy
-  -h                  show this help and exit
+  -c, --clearsign      clear-sign and copy
+  -d, --detachsign     detach-sign and copy
+  -h, --help           show this help and exit
 
 EOF
 

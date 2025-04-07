@@ -30,7 +30,7 @@ else
 	echo "  [option]"
 	echo "  -a            description of option"
 	echo "  -b            description of option"
-	echo "  -h            show this help and exit"
+	echo "  -h, --help    show this help and exit"
 	echo ""
 	exit 0
 fi

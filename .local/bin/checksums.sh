@@ -9,7 +9,7 @@
 #
 
 if [ $(id -u) != 0 ]; then
-        >&2 echo "Please, execute this script by sudo."
+	>&2 echo "Please, execute this script by sudo."
 	exit 1
 fi
 
@@ -22,17 +22,17 @@ fi
 usage()
 {
 if [ $1 -eq 1 ]; then
-        >&2 echo "Try '$(basename $0) --help' for more information."
-        exit 1
+	>&2 echo "Try '$(basename $0) --help' for more information."
+	exit 1
 else
 cat << EOF
 Usage: $(basename $0) [option]
 Wrapper script for 'md5sum' utility.
 
   [option]
-  -b, --before    compute MD5 sums
-  -a, --after     check MD5 sums
-  -h              show this help and exit
+  -b, --before     compute MD5 sums
+  -a, --after      check MD5 sums
+  -h, --help       show this help and exit
 
 EOF
 
