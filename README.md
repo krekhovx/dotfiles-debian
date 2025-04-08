@@ -105,11 +105,13 @@ get source uris.<br/>
 I use these fonts from time to time in my terminal.
 
 ```
-> glass tty vt220 bold
-> px ibm ega8 regular
-> unifont regular
-> unifont bold
-> terminus medium
-> terminus bold
+> glass tty vt220
+> px ibm ega8
+> unifont
+> terminus
+> fira code
 > hack regular
+> pxplus cordata ppc-21
+> pxplus cordata ppc-400
+> pxplus toshibasat 8x14
 ```
