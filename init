@@ -75,7 +75,7 @@ Usage: $(basename $0) [option]
   --xfce-terminal        xfce terminal emulator installation (xfce4-terminal)
                          ~/.config/xfce4/terminal/terminalrc + colorschemes
 
-  --mc                   midnight commander installation
+  --mc                   midnight commander installation with vim hotkeys
 
   --tmux                 terminal multiplexer installation
 
@@ -223,13 +223,20 @@ for arg in "$@"; do
 		;;
 
 		"--mc")
-			bold_message "Midnight Commander installation"
+			bold_message "Midnight Commander installation with Vim hotkeys"
 			if check_package mc; then
 				mkdir -p ~/.config/mc &>/dev/null | true
 				sudo mkdir -p /root/.config/mc &>/dev/null | true
 
 				cp -v ./.config/mc/{ini,panels.ini,hotlist} ~/.config/mc
 				sudo cp -v ./.config/mc/{ini,panels.ini} /root/.config/mc
+
+				# Available with mc 4.8.33
+				# https://github.com/MidnightCommander/mc/issues/4588
+				if [ -e /etc/mc/mc.vim.keymap ]; then
+					sudo rm /etc/mc/mc.keymap
+					sudo ln -s /etc/mc/mc.vim.keymap /etc/mc/mc.keymap
+				fi
 			else
 				>&2 echo "Please, install 'mc' package"
 				exit 1
