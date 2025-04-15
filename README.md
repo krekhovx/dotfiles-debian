@@ -5,8 +5,8 @@
 ## My Debian Dotfiles
 This is my Debian dotfiles (backup). Configuration files, useful scripts and
 aliases for my work, backgrounds, notes, hotkeys, various development tools,
-color schemes, etc. There are not only dotfiles here, but also some normal files
-that can be in ```/etc```.
+color schemes, etc. I’m using the default GTK themes/icons from Debian - nothing
+special (see [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)).
 
 I'm lazy, so there's a script
 [init](https://github.com/krekhovx/dotfiles-debian/blob/master/init) which
@@ -40,12 +40,12 @@ Another one (last screenshot):
 - <strong>Debuger:</strong> ```GDB Dashboard```
 - <strong>Version control system:</strong> ```Git```
 - <strong>Text-mode interface for Git:</strong> ```Tig```
-- <strong>Mail Client:</strong> ```Neomutt```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
+- <strong>Additional Packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
 - Install Debian with Xfce.
-- Clone repo:
+- Clone repository:
 ```
 $ git clone https://github.com/krekhovx/dotfiles-debian.git
 $ cd dotfiles-debian
@@ -59,9 +59,9 @@ $ ./init --help
 **Attention**. Be careful when running this script on your main machine, it does
 not create backup dotfiles and may ~~erase~~ your current working environment.
 
-Clean home, update ```/etc/apt/sources.list```:
+Clean home, update ```/etc/apt/sources.list```, install dependencies packages:
 ```
-$ ./init --clean-home --sources.list
+$ ./init --clean-home --sources.list --install-packages
 ```
 
 Configure $HOME environment:
@@ -71,7 +71,7 @@ $ ./init --bashrc --bash-completion --local-bin --local-share
 
 Configure Xfce environment and colors:
 ```
-$ ./init --xfce --xfce-hotkeys --xfce-terminal --dircolors --unclutter
+$ ./init --xfce --xfce-terminal --dircolors --unclutter
 ```
 
 Text editors, terminal multiplexer, debuger, file navigation:
@@ -79,9 +79,9 @@ Text editors, terminal multiplexer, debuger, file navigation:
 $ ./init --vim --vifm --tmux --mc --mousepad --gdb
 ```
 
-Mail client, RSS feed reader:
+RSS feed reader:
 ```
-$ ./init --neomutt --newsboat
+$ ./init --newsboat
 ```
 
 The script has other options, but I think you won't need it.
@@ -102,7 +102,7 @@ parses ```/var/log/apt/history.log``` to extract installation dates and package 
 get source uris.<br/>
 
 ## My favorite fonts
-I use these fonts from time to time in my terminal.
+I use these fonts from time to time in my environment.
 
 ```
 # Good readability

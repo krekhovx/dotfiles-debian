@@ -8,20 +8,20 @@ Plug 'iberianpig/tig-explorer.vim'
 
 call plug#end()
 
-syntax on                 " syntax highlighting
-filetype indent off       " disable auto indent
-set ls=2                  " show filename in status line
-set number                " numbers each line
-set hlsearch              " highlighting when doing a search (F3)
-set incsearch             " incrementally highlight matching
-set ignorecase            " ignore capital letters during search
-set noswapfile            " disable .swap files
-set background=dark       " dark or light
-set textwidth=80          " max 80 characters line
-set encoding=utf-8        " set the encoding to UTF-8
+syntax on                " syntax highlighting
+filetype indent off      " disable auto indent
+set ls=2                 " show filename in status line
+set number               " numbers each line
+set hlsearch             " highlighting when doing a search (F3)
+set incsearch            " incrementally highlight matching
+set ignorecase           " ignore capital letters during search
+set noswapfile           " disable .swap files
+set background=dark      " dark or light
+set textwidth=80         " max 80 characters line
+set encoding=utf-8       " set the encoding to UTF-8
 
 " list all vim color schemes :colorscheme <Tab>
-" colorscheme default
+"colorscheme default
 
 " visual mode change color highlight
 highlight Visual cterm=bold ctermbg=Gray ctermfg=NONE

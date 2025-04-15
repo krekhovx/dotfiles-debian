@@ -36,8 +36,6 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
-        <value type="string" value="аплет networkmanager"/>
-        <value type="string" value="сетевое соединение ethernet «wired connection 1» активно"/>
         <value type="string" value="ethernet network connection “wired connection 1” active"/>
       </property>
     </property>
@@ -47,13 +45,14 @@
     </property>
     <property name="plugin-12" type="string" value="clock">
       <property name="digital-layout" type="uint" value="2"/>
-      <property name="digital-date-font" type="string" value="Sans 10"/>
+      <property name="digital-date-font" type="string" value="PxPlus Cordata PPC-400 15"/>
       <property name="digital-date-format" type="string" value="%a %d %b %Y, %R"/>
     </property>
     <property name="plugin-1" type="string" value="xkb">
       <property name="display-type" type="uint" value="2"/>
       <property name="display-name" type="uint" value="1"/>
       <property name="group-policy" type="uint" value="0"/>
+      <property name="display-tooltip-icon" type="bool" value="false"/>
     </property>
   </property>
 </channel>

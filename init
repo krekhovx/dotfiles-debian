@@ -7,8 +7,10 @@
 # Be careful when running this script on your main machine,
 # it does not create backup dotfiles and may erase your current working environment.
 #
-# After the $ ./init --xfce OR $ ./init --xfce-hotkeys OR $ ./init --unclutter
-# need to session restart.
+# After running:
+# $ ./init --xfce
+# $ ./init --unclutter
+# need to restart the session.
 #
 
 set -ex
@@ -20,7 +22,7 @@ check_package()
 	dpkg -l | awk '{print $2}' | grep ^$1$ &>/dev/null && return 0 || return 1
 }
 
-# ----------------------------------
+# ------------------------------------------------------------------
 
 mark_start="# ----"
 mark_end="# ---- Don't write after this"
@@ -55,25 +57,27 @@ Usage: $(basename $0) [option]
 
   [option]
 
+  --install-packages     install environment dependencies
+
   --sources.list         sources.list installation
 
   --clean-home           cleanup home directory, configure user-dirs.*
 
-  --bashrc               ~/.bashrc extra rules installation
-                         append rules to the current content of ~/.bashrc
+  --bashrc               ~/.bashrc and ~/.bash_aliases installation
+
+  --dircolors            ~/.dircolors installation
 
   --bash-completion      enable bash completion
 
   --locales              generate 'en_US' 'ru_RU' locales
 
   --xfce                 full xfce installation (desktop session)
-                         all ~/.config/xfce4/xfconf/xfce-perchannel-xml files
+                         includes all ~/.config/xfce4/xfconf/xfce-perchannel-xml files
 
-  --xfce-hotkeys         xfce keyboard shortcuts installation, configure only
-                         ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-
-  --xfce-terminal        xfce terminal emulator installation (xfce4-terminal)
+  --xfce-terminal        xfce terminal emulator installation
                          ~/.config/xfce4/terminal/terminalrc + colorschemes
+
+  --mousepad             mousepad text editor installation
 
   --mc                   midnight commander installation with vim hotkeys
 
@@ -83,15 +87,7 @@ Usage: $(basename $0) [option]
 
   --vifm                 vifm installation
 
-  --mousepad             mousepad text editor installation
-
   --gdb                  gdb debugger installation
-
-  --neomutt              mail client neomutt installation
-
-  --newsboat             rss feed reader installation
-
-  --dircolors            dircolors installation
 
   --local-bin            ~/.local/bin installation
 
@@ -101,6 +97,8 @@ Usage: $(basename $0) [option]
 
   --unclutter            unclutter installation
 
+  --newsboat             rss feed reader installation
+
   -h, --help             show this help and exit
 
 EOF
@@ -108,10 +106,24 @@ EOF
 exit 0
 }
 
-# ----------------------------------
+# ------------------------------------------------------------------
 
 for arg in "$@"; do
-        case "$arg" in
+	case "$arg" in
+		"--install-packages")
+			set +e
+			for p in $(grep -v '^#' pkgs.list); do
+				if ! check_package $p; then
+					sudo eatmydata apt-get -y install $p
+					echo -e "$?\n"
+				fi
+			done
+			set -e
+
+			sudo mandb
+			sudo apt-file update
+		;;
+
 		"--sources.list")
 			bold_message "sources.list installation"
 			sudo cp -v ./sources.list /etc/apt/
@@ -122,13 +134,14 @@ for arg in "$@"; do
 			bold_message "Cleanup $HOME"
 
 			trash_dirs=(Видео Общедоступные Шаблоны Документы \
-			Videos Public Templates Documents)
+			            Videos Public Templates Documents)
 
 			# I don't need these dirs =)
 			for dir in ${trash_dirs[*]}; do
 				[ -d ~/$dir ] && rm -ri ~/$dir
 			done
 
+			mkdir ~/git &>/dev/null | true
 			mkdir ~/sources &>/dev/null | true
 			ls ~
 
@@ -138,10 +151,13 @@ for arg in "$@"; do
 
 		"--bashrc")
 			bold_message "Bash read extra rules installation"
-			remove_marked_lines ~/.bashrc
-			mark_start_file ~/.bashrc
-			cat ./.bashrc >> ~/.bashrc
-			mark_end_file ~/.bashrc
+			cp -v ./.bashrc ~/
+			cp -v ./.bash_aliases ~/
+		;;
+
+		"--dircolors")
+			bold_message "dircolors installation"
+			cp -v ./.dircolors ~/
 		;;
 
 		"--bash-completion")
@@ -158,9 +174,6 @@ for arg in "$@"; do
 		"--locales")
 			bold_message "Generate locales"
 			if check_package locales; then
-				# for the shell, I use 'en_US.UTF-8' (look '--bashrc')
-				# for the interface 'en_US.UTF-8'
-
 				for loc in en_US.UTF-8 ru_RU.UTF-8; do
 					if ! grep ^$loc /etc/locale.gen &>/dev/null; then
 						echo "$loc UTF-8" | sudo tee -a /etc/locale.gen
@@ -168,7 +181,6 @@ for arg in "$@"; do
 					fi
 				done
 
-				# all interface, all users
 				echo LANG="en_US.UTF8" | sudo tee /etc/default/locale
 			else
 				>&2 echo "Please, install 'locales' package"
@@ -195,17 +207,10 @@ for arg in "$@"; do
 				max_brightness=$(cat $device_name/max_brightness)
 				echo $max_brightness | sudo tee $device_name/brightness
 			fi
-		;;
 
-		"--xfce-hotkeys")
-			bold_message "XFCE keyboard shortcuts installation"
-			if check_package xfce4; then
-				cp -v ./.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml \
-				~/.config/xfce4/xfconf/xfce-perchannel-xml
-			else
-				>&2 echo "Current desktop environment not 'xfce'"
-				exit 1
-			fi
+			mkdir ~/.fonts &>/dev/null | true
+			cp -v ./.fonts/* ~/.fonts
+			fc-cache -f
 		;;
 
 		"--xfce-terminal")
@@ -218,6 +223,20 @@ for arg in "$@"; do
 				cp -v ./.local/share/xfce4/terminal/colorschemes/* ~/.local/share/xfce4/terminal/colorschemes
 			else
 				>&2 echo "Please, install 'xfce4-terminal' package"
+				exit 1
+			fi
+		;;
+
+		"--mousepad")
+			bold_message "Mousepad installation"
+			if check_package mousepad; then
+				# How export mousepad configuration? Commands:
+				# $ dconf dump /org/xfce/mousepad/ > mousepad.settings
+				# $ dconf load /org/xfce/mousepad/ < mousepad.settings
+				cp -v ./.config/dconf/mousepad.settings ~/.config/dconf
+				dconf load /org/xfce/mousepad/ < ~/.config/dconf/mousepad.settings
+			else
+				>&2 echo "Please, install 'mousepad' package"
 				exit 1
 			fi
 		;;
@@ -284,20 +303,6 @@ for arg in "$@"; do
 			fi
 		;;
 
-		"--mousepad")
-			bold_message "Mousepad installation"
-			if check_package mousepad; then
-				# How export mousepad configuration? Commands:
-				# $ dconf dump /org/xfce/mousepad/ > mousepad.settings
-				# $ dconf load /org/xfce/mousepad/ < mousepad.settings
-				cp -v ./.config/dconf/mousepad.settings ~/.config/dconf
-				dconf load /org/xfce/mousepad/ < ~/.config/dconf/mousepad.settings
-			else
-				>&2 echo "Please, install 'mousepad' package"
-				exit 1
-			fi
-		;;
-
 		"--gdb")
 			bold_message "Gdb installation"
 			if check_package gdb; then
@@ -314,33 +319,6 @@ for arg in "$@"; do
 				>&2 echo "Please, install 'gdb' package"
 				exit 1
 			fi
-		;;
-
-		"--neomutt")
-			bold_message "Neomutt installation"
-			if check_package neomutt; then
-				cp -v ./.neomuttrc ~/
-				cp -v ./.signature ~/
-			else
-				>&2 echo "Please, install 'neomutt' package"
-				exit 1
-			fi
-		;;
-
-		"--newsboat")
-			bold_message "RSS feed reader installation"
-			if check_package newsboat; then
-				mkdir ~/.newsboat &>/dev/null | true
-				cp -v ./.newsboat/* ~/.newsboat
-			else
-				>&2 echo "Please, install 'newsboat' package"
-				exit 1
-			fi
-		;;
-
-		"--dircolors")
-			bold_message "dircolors installation"
-			cp -v ./.dircolors ~/
 		;;
 
 		"--local-bin")
@@ -376,6 +354,17 @@ for arg in "$@"; do
 			fi
 		;;
 
-                "-h" | "--help") usage ;;
-        esac
+		"--newsboat")
+			bold_message "RSS feed reader installation"
+			if check_package newsboat; then
+				mkdir ~/.newsboat &>/dev/null | true
+				cp -v ./.newsboat/* ~/.newsboat
+			else
+				>&2 echo "Please, install 'newsboat' package"
+				exit 1
+			fi
+		;;
+
+		"-h" | "--help") usage ;;
+	esac
 done

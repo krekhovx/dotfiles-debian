@@ -1,0 +1,88 @@
+# ------------------------------------------------------------------
+#
+# Please install Xfce4 Desktop manually
+#
+# ------------------------------------------------------------------
+# Theme and Font Setup
+# ------------------------------------------------------------------
+
+# I like Arc-Dark theme from this package
+arc-theme
+
+# I like Adwaita-dark theme from this package
+gnome-themes-extra
+
+# I have been using these icons for many years
+tango-icon-theme
+
+# Font Management
+font-manager
+
+# Good Readability
+fonts-hack
+fonts-firacode
+fonts-terminus
+xfonts-terminus
+
+# Nostalgia (Also see .fonts)
+# https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
+fonts-unifont
+fonts-glasstty
+fonts-ibm-plex
+
+# ------------------------------------------------------------------
+# init Script Dependencies
+# https://github.com/krekhovx/dotfiles-debian/blob/master/init
+# ------------------------------------------------------------------
+
+mc
+git
+tig
+gdb
+vim
+vifm
+tmux
+figlet
+vim-gtk3
+mousepad
+unclutter
+unclutter-startup
+bash-completion
+exuberant-ctags
+newsboat
+aptitude
+ripgrep
+fzf
+fzy
+locales
+audacious
+galculator
+firefox-esr
+telegram-desktop
+gnome-screensaver
+
+# ------------------------------------------------------------------
+# Script Dependencies .local/bin/*
+# https://github.com/krekhovx/dotfiles-debian/tree/master/.local/bin
+# ------------------------------------------------------------------
+
+at
+tar
+gpg
+curl
+wget
+tree
+sudo
+cron
+xsel
+man-db
+openssl
+coreutils
+findutils
+alsa-utils
+qemu-utils
+qemu-system
+# Please install Docker from this site better:
+#docker # https://docs.docker.com/engine/install/debian/
+
+# ------------------------------------------------------------------

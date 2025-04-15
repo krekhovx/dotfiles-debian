@@ -62,7 +62,7 @@
     <property name="theme" type="string" value="Default"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
-    <property name="title_font" type="string" value="Sans Bold 10"/>
+    <property name="title_font" type="string" value="PxPlus Cordata PPC-400 Bold 15"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="titleless_maximize" type="bool" value="false"/>
     <property name="title_shadow_active" type="string" value="false"/>
@@ -86,10 +86,10 @@
       <value type="string" value="Workspace 2"/>
       <value type="string" value="Workspace 3"/>
       <value type="string" value="Workspace 4"/>
-      <value type="string" value="Рабочее место 5"/>
-      <value type="string" value="Рабочее место 6"/>
-      <value type="string" value="Рабочее место 7"/>
-      <value type="string" value="Рабочее место 8"/>
+      <value type="string" value="Workspace 5"/>
+      <value type="string" value="Workspace 6"/>
+      <value type="string" value="Workspace 7"/>
+      <value type="string" value="Workspace 8"/>
     </property>
   </property>
 </channel>
