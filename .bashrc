@@ -10,7 +10,7 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -139,11 +139,13 @@ man()
 # exports
 export LANG=en_US.UTF8
 export LC_ALL=en_US.UTF-8
+
 export EDITOR='/usr/bin/vim'
 export BROWSER='/usr/bin/firefox'
 export TERMINAL='/usr/bin/xfce4-terminal'
-export DEBEMAIL=krekhov.dev@gmail.com
+
 export DEBFULLNAME="Kirill Rekhov"
+export DEBEMAIL=krekhov.dev@gmail.com
 
 # function for my .vimrc trick (vnoremap)
 # (vim -> visual mode -> ctrl + c -> ~/vbuf)
