@@ -203,7 +203,7 @@ for arg in "$@"; do
 
 			# max brightness for laptops
 			device_name=$(find /sys/class/backlight/ -mindepth 1)
-			if [ -n $device_name ]; then
+			if [ -n "$device_name" ]; then
 				max_brightness=$(cat $device_name/max_brightness)
 				echo $max_brightness | sudo tee $device_name/brightness
 			fi
