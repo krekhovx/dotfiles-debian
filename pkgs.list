@@ -12,6 +12,15 @@ arc-theme
 # I like Adwaita-dark theme from this package
 gnome-themes-extra
 
+# I like Breeze-Dark theme from this package
+breeze-gtk-theme
+
+# Crazy old school things
+darkblood-gtk-theme
+darkfire-gtk-theme
+darkcold-gtk-theme
+darkmint-gtk-theme
+
 # I have been using these icons for many years
 tango-icon-theme
 
