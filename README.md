@@ -26,6 +26,12 @@ Terminal Emulator with Tmux (last screenshot):
 Another one (last screenshot):
 ![screenshot](./images/example-e.png)
 
+- Xfce Icon Theme: Tango
+- Xfce GTK Theme: Breeze-Dark
+
+- Xfce Terminal Font: Terminus
+- Xfce Environment Font: PxPlus Cordata PPC-400
+
 ## Description of the environment
 - <strong>OS:</strong> ```Debian```
 - <strong>DE:</strong> ```Xfce```
@@ -43,7 +49,7 @@ Another one (last screenshot):
 - <strong>Version control system:</strong> ```Git```
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
-- <strong>Additional Packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
+- <strong>Environment Dependencies:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
 - Install Debian with Xfce.
