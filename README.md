@@ -17,12 +17,14 @@ The repository is updated frequently.
 
 Xfce Desktop (last screenshot):
 ![screenshot](./images/example-a.png)
+![screenshot](./images/example-b.png)
+![screenshot](./images/example-c.png)
 
 Terminal Emulator with Tmux (last screenshot):
-![screenshot](./images/example-b.png)
+![screenshot](./images/example-d.png)
 
 Another one (last screenshot):
-![screenshot](./images/example-c.png)
+![screenshot](./images/example-e.png)
 
 ## Description of the environment
 - <strong>OS:</strong> ```Debian```
