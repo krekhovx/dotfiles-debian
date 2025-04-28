@@ -26,11 +26,11 @@ Terminal Emulator with Tmux (last screenshot):
 Another one (last screenshot):
 ![screenshot](./images/example-e.png)
 
-- Xfce Icon Theme: Tango
-- Xfce GTK Theme: Breeze-Dark
+- <strong>Xfce Icon Theme:</strong> ```Tango```
+- <strong>Xfce GTK Theme:</strong> ```Breeze-Dark```
 
-- Xfce Terminal Font: Terminus
-- Xfce Environment Font: PxPlus Cordata PPC-400
+- <strong>Xfce Terminal Font:</strong> ```Terminus```
+- <strong>Xfce Environment Font:</strong> ```PxPlus Cordata PPC-400```
 
 ## Description of the environment
 - <strong>OS:</strong> ```Debian```
