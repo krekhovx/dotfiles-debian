@@ -3,4 +3,4 @@
 # Used to run a clean Debian environment for testing and experimentation.
 #
 
-docker run -it debian
+sudo docker run -it debian
