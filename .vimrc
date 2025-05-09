@@ -24,12 +24,12 @@ set encoding=utf-8       " set the encoding to UTF-8
 "colorscheme default
 
 " visual mode change color highlight
-highlight Visual cterm=bold ctermbg=Gray ctermfg=NONE
+highlight Visual cterm=bold ctermbg=240 ctermfg=NONE
 
 " 'vim-airline/vim-airline' has a lot of unnecessary information
 " these lines are simpler
 set statusline=%{getcwd()}/:%<%f
-highlight StatusLine ctermfg=Gray ctermbg=Black
+highlight StatusLine ctermfg=250 ctermbg=238
 
 " show hidden files (nerdtree plugin)
 let NERDTreeShowHidden=1
