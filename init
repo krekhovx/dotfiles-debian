@@ -221,6 +221,11 @@ for arg in "$@"; do
 
 				mkdir -p ~/.local/share/xfce4/terminal/colorschemes &>/dev/null | true
 				cp -v ./.local/share/xfce4/terminal/colorschemes/* ~/.local/share/xfce4/terminal/colorschemes
+
+				# Delete unattractive default color schemes.
+				# Look at these ~/.local/share/xfce4/terminal/colorschemes/
+				[ -d /usr/share/xfce4/terminal/colorschemes/ ] && \
+				rm /usr/share/xfce4/terminal/colorschemes/* &>/dev/null
 			else
 				>&2 echo "Please, install 'xfce4-terminal' package"
 				exit 1
