@@ -75,3 +75,14 @@ alias vf='vifm'
 alias nb='newsboat'
 alias rmf='shred -uzn 4' # secure remove file
 alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
+
+# packages
+searchpkg()
+{
+    apt-cache search . | awk -v pat="$1" '$1 ~ pat {print $0}' | grep --color=always "$1"
+}
+
+listpkg()
+{
+    dpkg -l | awk -v pat="$1" '$1 == "ii" && $2 ~ pat {print $0}' | grep --color=always "$1"
+}
