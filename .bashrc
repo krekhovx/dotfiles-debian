@@ -136,6 +136,11 @@ man()
     command man "$@"
 }
 
+# set a secure umask to 077
+# files: 600 (rw-------)
+# directories: 700 (rwx------)
+umask 077
+
 # exports
 export LANG=en_US.UTF8
 export LC_ALL=en_US.UTF-8
@@ -149,7 +154,7 @@ export DEBEMAIL=krekhov.dev@gmail.com
 
 # function for my .vimrc trick (vnoremap)
 # (vim -> visual mode -> ctrl + c -> ~/vbuf)
-# ~/vbuf file has saved lines from the clipboard
+# ~/vbuf stores lines copied from vim clipboard
 vb()
 {
     [ -s ~/vbuf ] && vim ~/vbuf || echo $?
