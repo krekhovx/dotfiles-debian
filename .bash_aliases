@@ -86,3 +86,11 @@ listpkg()
 {
     dpkg -l | awk -v pat="$1" '$1 == "ii" && $2 ~ pat {print $0}' | grep --color=always "$1"
 }
+
+create-orig()
+{
+    if [ -d ./debian ]; then
+        tar --exclude='./.git' --exclude='./.pc' --exclude='./debian' -czvf \
+        "../$(dpkg-parsechangelog -S Source)_$(dpkg-parsechangelog -S Version | cut -d'-' -f1).orig.tar.gz" .
+    fi
+}
