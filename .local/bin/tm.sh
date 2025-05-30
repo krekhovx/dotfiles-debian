@@ -28,7 +28,7 @@ case "$1" in
 '-atn'|'--at-now')
 	[ -z "$2" ] && usage 1
 	if [ -e ~/.local/share/prompt.wav ]; then
-		echo "aplay ~/.local/share/prompt.wav" | at now + "$2" minute
+		echo "aplay ~/.local/share/prompt.wav" | at now + "$2" minutes
 	else
 		>&2 echo "File ~/.local/share/prompt.wav not exist."
 		exit 1
