@@ -85,6 +85,7 @@ sudo
 cron
 xsel
 man-db
+zenity
 openssl
 coreutils
 findutils
