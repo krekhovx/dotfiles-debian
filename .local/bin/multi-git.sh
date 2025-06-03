@@ -120,8 +120,10 @@ case "$1" in
 
 	# clone my favorite Salsa projects
 	'-cs'|'--clone-salsa')
-		misc_packages=(bash mc tmux strace telegram-desktop xterm \
-		aptitude git grub2 pbuilder debootstrap eatmydata)
+		# packages in which I make a minimum contribution
+		watch_packages=(xfce4-terminal xterm mc tmux vim \
+		how-can-i-help popularity-contest telegram-desktop systemd \
+		strace eatmydata)
 
 		xfce_packages=$(grep-aptavail -F Maintainer -s Package -n \
 		"Debian Xfce Maintainers <debian-xfce@lists.debian.org>")
@@ -135,7 +137,7 @@ case "$1" in
 		# aptitude not clone from the script (i don't know why):
 		# https://salsa.debian.org/apt-team/aptitude.git
 
-		clone_salsa "misc" "${misc_packages[*]}"
+		clone_salsa "watch" "${watch_packages[*]}"
 		clone_salsa "xfce" "${xfce_packages[*]}"
 		clone_salsa "vim" "${vim_packages[*]}"
 		clone_salsa "trans" "${trans_packages[*]}"

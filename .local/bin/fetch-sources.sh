@@ -4,8 +4,10 @@
 # My favorite Debian packages here (for maintenance work).
 #
 
-misc_packages=(bash mc tmux strace telegram-desktop xterm \
-aptitude git grub2 pbuilder debootstrap eatmydata)
+# packages in which I make a minimum contribution
+watch_packages=(xfce4-terminal xterm mc tmux vim \
+how-can-i-help popularity-contest telegram-desktop systemd \
+strace eatmydata)
 
 xfce_packages=$(grep-aptavail -F Maintainer -s Package -n \
 "Debian Xfce Maintainers <debian-xfce@lists.debian.org>")
@@ -29,7 +31,7 @@ get_sources()
 }
 
 apt-get update
-get_sources "misc" "${misc_packages[*]}"
+get_sources "watch" "${watch_packages[*]}"
 get_sources "xfce" "${xfce_packages[*]}"
 get_sources "vim" "${vim_packages[*]}"
 
