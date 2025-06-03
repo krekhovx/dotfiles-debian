@@ -87,6 +87,24 @@ listpkg()
     dpkg -l | awk -v pat="$1" '$1 == "ii" && $2 ~ pat {print $0}' | grep --color=always "$1"
 }
 
+aptfilelist()
+{
+    if [ -z "$1" ]; then
+        echo "usage: aptfilelist <package>"
+        return 1
+    fi
+    apt-file list "$1" | less
+}
+
+listfiles()
+{
+    if [ -z "$1" ]; then
+        echo "usage: listfiles <package>"
+        return 1
+    fi
+    dpkg -L "$1" | less
+}
+
 create-orig()
 {
     if [ -d ./debian ]; then
