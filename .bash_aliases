@@ -70,9 +70,9 @@ alias sdn='sudo shutdown -h now'
 # misc
 alias pip='pip3'
 alias python='python3'
-alias v='vim'
-alias vf='vifm'
 alias nb='newsboat'
+alias vf='vifm'
+alias v='vim'
 alias rmf='shred -uzn 4' # secure remove file
 alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
 
