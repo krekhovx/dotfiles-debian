@@ -152,9 +152,9 @@ export TERMINAL='/usr/bin/xfce4-terminal'
 export DEBFULLNAME="Kirill Rekhov"
 export DEBEMAIL=krekhov.dev@gmail.com
 
-# function for my .vimrc trick (vnoremap)
-# (vim -> visual mode -> ctrl + c -> ~/vbuf)
-# ~/vbuf stores lines copied from vim clipboard
+# function for .vimrc trick (vnoremap)
+# (vim visual mode -> ctrl+c -> ~/vbuf)
+# ~/vbuf stores lines yanked from Vim
 vb()
 {
     [ -s ~/vbuf ] && vim ~/vbuf || echo $?
