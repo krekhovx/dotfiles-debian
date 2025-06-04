@@ -32,9 +32,10 @@ case "$1" in
 
 '-qch'|'--qemu-cdrom-hda')
 	[ -z "$2" ] && usage 1
-	f=$(basename $(mktemp))
-	qemu-img create -f qcow2 "/tmp/$f.img" 20G
-	qemu-system-x86_64 -boot d -cdrom "$2" -m 2048 -hda "/tmp/$f.img"
+	f=$(basename $(mktemp -u))
+	qemu-img create -f qcow2 "/tmp/$f.img" 30G
+	qemu-system-x86_64 -boot d -cdrom "$2" -m 2048 -hda "/tmp/$f.img" \
+	-net nic -net user -enable-kvm -cpu host -smp $(nproc)
 	rm "/tmp/$f.img"
 	;;
 
