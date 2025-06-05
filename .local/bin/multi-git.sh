@@ -108,7 +108,8 @@ clone_salsa()
 case "$1" in
 	# clone my GitHub projects
 	'-ck'|'--clone-krekhovx')
-		projects=(notes dotfiles-debian chroot-debianizer ioquake3-linux-install)
+		projects=(krekhovx notes dotfiles-debian pbuilder-amd64-helper \
+		quake3-terminal-theme)
 
 		for name in ${projects[*]}; do
 			if [ ! -d "$name" ]; then
