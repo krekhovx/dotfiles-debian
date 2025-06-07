@@ -51,8 +51,8 @@ alias tod='cd ~/main/self && vim todo/head'
 alias gw='cd ~/git/work'
 alias gm='cd ~/git/myenv'
 alias gs='cd ~/git/salsa'
-alias gn='cd ~/git/myenv/notes'
-alias gd='cd ~/git/myenv/notes/cheat-sheets/debian'
+alias gn='cd ~/git/myenv/krxnotes'
+alias gd='cd ~/git/myenv/krxnotes/cheat-sheets/debian'
 
 # edit
 if [ -n "$EDITOR" ]; then
