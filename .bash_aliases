@@ -112,3 +112,14 @@ create-orig()
         "../$(dpkg-parsechangelog -S Source)_$(dpkg-parsechangelog -S Version | cut -d'-' -f1).orig.tar.gz" .
     fi
 }
+
+# others
+wgetf() {
+    url="$1"
+    case "$url" in
+    *github.com/*/blob/*)
+        url=$(echo "$url" | sed -e 's#github.com/#raw.githubusercontent.com/#' -e 's#/blob/#/#')
+        ;;
+    esac
+    wget "$url"
+}
