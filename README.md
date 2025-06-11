@@ -2,7 +2,7 @@
 <img src="https://github.com/krekhovx/dotfiles-debian/blob/master/images/logo-color.jpg">
 </div>
 
-## My Debian Dotfiles
+## dotfiles-debian
 This is my Debian dotfiles (backup). Configuration files, useful scripts and
 aliases for my work, backgrounds, notes, hotkeys, various development tools,
 color schemes, etc. I’m using the default GTK themes/icons from Debian - nothing
