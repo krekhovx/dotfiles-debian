@@ -1,9 +1,10 @@
 #!/bin/sh
 #
-# Get source uris.
+# Get source package URIs for a given command or path.
+#
 # Examples:
-# $ source-uris.sh /bin/bash
-# $ source-uris.sh scp
+# $ get-source-uris.sh /bin/bash
+# $ get-source-uris.sh scp
 #
 
 if [ -n "$1" ]; then

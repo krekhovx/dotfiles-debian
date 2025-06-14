@@ -2,13 +2,14 @@
 #
 # Wrapper script for 'md5sum' utility.
 # Actual to use together with crontab.
+#
 # For example:
 # ./script.sh --before (12:00)
 # ./script.sh --after (00:00)
 # Dotfiles with failed sums: /home/$SUDO_USER/.$(date +"%d-%m-%Y-%H:%M:%S")
 #
 
-if [ $(id -u) != 0 ]; then
+if [ $(id -u) -ne 0 ]; then
 	>&2 echo "Please, execute this script by sudo."
 	exit 1
 fi

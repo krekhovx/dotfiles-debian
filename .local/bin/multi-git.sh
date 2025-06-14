@@ -123,8 +123,8 @@ case "$1" in
 	'-cs'|'--clone-salsa')
 		# packages in which I make a minimum contribution
 		watch_packages=(xfce4-terminal xterm mc tmux vim \
-		how-can-i-help popularity-contest telegram-desktop systemd \
-		strace eatmydata)
+		how-can-i-help popularity-contest telegram-desktop \
+		systemd strace eatmydata)
 
 		xfce_packages=$(grep-aptavail -F Maintainer -s Package -n \
 		"Debian Xfce Maintainers <debian-xfce@lists.debian.org>")
@@ -132,16 +132,9 @@ case "$1" in
 		vim_packages=$(grep-aptavail -F Maintainer -s Package -n \
 		"Debian Vim Maintainers <team+vim@tracker.debian.org>")
 
-		trans_packages=(webwml manpages-l10n)
-
-		# webwml not a package: https://salsa.debian.org/webmaster-team/webwml
-		# aptitude not clone from the script (i don't know why):
-		# https://salsa.debian.org/apt-team/aptitude.git
-
 		clone_salsa "watch" "${watch_packages[*]}"
 		clone_salsa "xfce" "${xfce_packages[*]}"
 		clone_salsa "vim" "${vim_packages[*]}"
-		clone_salsa "trans" "${trans_packages[*]}"
 	;;
 
 	'-p'|'--pull')

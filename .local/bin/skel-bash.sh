@@ -15,7 +15,7 @@ cat << 'EOF' > "$uniq_name"
 # Comments here...
 #
 
-if (( $(id -u) != 0 )); then
+if (( $(id -u) -ne 0 )); then
 	>&2 echo "Please, execute this script by sudo."
 	exit 1
 fi

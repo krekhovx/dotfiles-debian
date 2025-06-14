@@ -109,10 +109,13 @@ encrypt/decrypt regular file with sensitive information (using a password).<br/>
 remove 'rc' (removed but not purged) packages plus debs autoremove and autoclean.<br/>
 
 [apt-recent-installs.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/apt-recent-installs.sh) -
-parses ```/var/log/apt/history.log``` to extract installation dates and package lists.<br/>
+parses the ```/var/log/apt/history.log``` file to extract installation dates and package lists.<br/>
 
-[source-uris.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/source-uris.sh) -
-get source uris.<br/>
+[get-source-uris.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/get-source-uris.sh) -
+get source package URIs for a given command or path.<br/>
+
+[qemu-launcher.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/qemu-launcher.sh) -
+launch QEMU with the provided disk or ISO image option.<br/>
 
 ## My favorite fonts
 I use these fonts from time to time in my environment.

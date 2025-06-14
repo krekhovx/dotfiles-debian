@@ -6,8 +6,8 @@
 
 # packages in which I make a minimum contribution
 watch_packages=(xfce4-terminal xterm mc tmux vim \
-how-can-i-help popularity-contest telegram-desktop systemd \
-strace eatmydata)
+how-can-i-help popularity-contest telegram-desktop \
+systemd strace eatmydata)
 
 xfce_packages=$(grep-aptavail -F Maintainer -s Package -n \
 "Debian Xfce Maintainers <debian-xfce@lists.debian.org>")
