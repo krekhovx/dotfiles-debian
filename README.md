@@ -134,3 +134,5 @@ I use these fonts from time to time in my environment.
 > pxplus cordata ppc-400
 > pxplus toshibasat 8x14
 ```
+
+[Nerd Fonts](https://www.nerdfonts.com/)
