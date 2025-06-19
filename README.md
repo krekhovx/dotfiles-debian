@@ -34,7 +34,7 @@ Another one (last screenshot):
 
 ## Description of the environment
 - <strong>OS:</strong> ```Debian```
-- <strong>DE:</strong> ```Xfce```
+- <strong>DE:</strong> ```Xfce4```
 - <strong>DM:</strong> ```LightDM```
 - <strong>WM:</strong> ```Xfwm4```
 - <strong>Shell:</strong> ```Bash```
@@ -94,7 +94,7 @@ $ ./init --newsboat
 
 The script has other options, but I think you won't need it.
 
-## Scripts
+## Local scripts
 Location: [.local/bin/](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin)
 
 Few examples:<br/>
