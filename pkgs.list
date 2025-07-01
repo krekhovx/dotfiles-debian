@@ -47,11 +47,11 @@ fonts-ibm-plex
 mc
 git
 tig
+bat
 gdb
 vim
 vifm
 tmux
-figlet
 vim-gtk3
 mousepad
 unclutter

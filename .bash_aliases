@@ -73,6 +73,7 @@ alias python='python3'
 alias nb='newsboat'
 alias vf='vifm'
 alias v='vim'
+alias less='batcat'
 alias rmf='shred -uzn 4' # secure remove file
 alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
 
