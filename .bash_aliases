@@ -74,7 +74,8 @@ alias nb='newsboat'
 alias vf='vifm'
 alias v='vim'
 alias less='batcat'
-alias rmf='shred -uzn 4' # secure remove file
+alias rmf='shred -uzn 4' # secure remove file (HDD only)
+alias rmd='wipe -rfq -Q 4' # secure remove directory (HDD only)
 alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
 
 # packages
