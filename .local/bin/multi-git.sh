@@ -15,8 +15,8 @@ $(echo -e "\e[96mUsage: $(basename $0) [options]\e[0m")
 Multiple Git Control (simple git operations).
 
   [option]
-  -ck, --clone-krekhovx                     clone my GitHub projects in current directory
   -cs, --clone-salsa                        clone my favorite Salsa projects in current directory
+  -ck, --clone-krekhovx                     clone my GitHub projects in current directory
   -p, --pull </path/to/git/projects>        pull from the specified Git projects, all branches
   -s, --status </path/to/git/projects>      status from the specified Git projects, current branch
   -h, --help                                show this help and exit
@@ -121,7 +121,7 @@ case "$1" in
 
 	# clone my favorite Salsa projects
 	'-cs'|'--clone-salsa')
-		# packages in which I make a minimum contribution
+		# packages I monitor
 		watch_packages=(xfce4-terminal xterm mc tmux vim \
 		how-can-i-help popularity-contest telegram-desktop \
 		systemd strace eatmydata)

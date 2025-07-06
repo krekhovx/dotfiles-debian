@@ -4,7 +4,7 @@
 # My favorite Debian packages here (for maintenance work).
 #
 
-# packages in which I make a minimum contribution
+# packages I monitor
 watch_packages=(xfce4-terminal xterm mc tmux vim \
 how-can-i-help popularity-contest telegram-desktop \
 systemd strace eatmydata)
