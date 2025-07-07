@@ -67,6 +67,10 @@ alias a='sudo aptitude'
 alias rb='sudo reboot'
 alias sdn='sudo shutdown -h now'
 
+# journals
+alias dmesgview='sudo dmesg -HTx'
+alias jerrors='journalctl -S today -p 3..4'
+
 # misc
 alias pip='pip3'
 alias python='python3'
