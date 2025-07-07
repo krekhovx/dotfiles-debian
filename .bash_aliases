@@ -81,6 +81,7 @@ alias less='batcat'
 alias rmf='shred -uzn 4' # secure remove file (HDD only)
 alias rmd='wipe -rfq -Q 4' # secure remove directory (HDD only)
 alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
+alias vl='vlock' # quickly lock the terminal
 
 # packages
 searchpkg()
