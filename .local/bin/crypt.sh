@@ -11,8 +11,8 @@ if [ $1 -eq 1 ]; then
 else
 cat << EOF
 Usage: $(basename $0) [option]
-Use AES 256 (Advanced Encryption Standard) cipher
-for symmetric file encrypt/decrypt.
+Use the AES-256 (Advanced Encryption Standard) cipher for symmetric file
+encryption and decryption.
 
   [option]
   -f, --file </path/to/file>     specify file (regular or openssl)
