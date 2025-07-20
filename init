@@ -189,9 +189,6 @@ for arg in "$@"; do
 		;;
 
 		"--xfce")
-			# XDG_DATA_DIRS not set in ssh session
-			#if echo "$XDG_DATA_DIRS" | grep 'xfce' &>/dev/null; then
-
 			bold_message "XFCE installation"
 			if check_package xfce4; then
 				cp -v ./.config/xfce4/xfconf/xfce-perchannel-xml/* \
