@@ -6,3 +6,12 @@ allow_unsigned_uploads = 0
 progress_indicator = 2
 # Allow uploads for UNRELEASED packages
 allowed_distributions = .*
+
+[ftp-master]
+fqdn = ftp.upload.debian.org
+incoming = /pub/UploadQueue/
+login = anonymous
+allow_dcut = 1
+method = ftp
+allow_unsigned_uploads = 0
+progress_indicator = 2
