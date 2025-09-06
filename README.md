@@ -100,7 +100,7 @@ Location: [.local/bin/](https://github.com/krekhovx/dotfiles-debian/blob/master/
 Few examples:<br/>
 
 [multi-git.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/multi-git.sh) -
-manages all specified Git projects (simple Git operations).<br/>
+execute Git commands like 'pull', 'status' across multiple Git projects for easy management.<br/>
 
 [crypt.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/crypt.sh) -
 encrypt/decrypt regular file with sensitive information (using a password).<br/>
