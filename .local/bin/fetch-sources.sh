@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# Stupid script for fetching source codes.
-# My favorite Debian packages here (for maintenance work).
+# Simple script for fetching source codes.
+# My favorite Debian packages here.
 #
 
 # packages I monitor
