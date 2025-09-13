@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# This main project script which configure/install my Debian environment (dotfiles).
+# This main project script which configure/install my Debian environment.
 # Configures the necessary tools for development and convenience.
 # Minimalistic environment and instruments with old-school fonts.
 #
@@ -24,30 +24,9 @@ check_package()
 
 # ------------------------------------------------------------------
 
-mark_start="# ----"
-mark_end="# ---- Don't write after this"
-
-mark_start_file()
-{
-	echo -e "\n$mark_start\n" >> $1
-}
-
-mark_end_file()
-{
-	echo -e "\n$mark_end" >> $1
-}
-
 bold_message()
 {
 	echo -e "\e[96m*** ----- $1 ----- ***\e[0m"
-}
-
-remove_marked_lines()
-{
-	if grep "^$mark_start" $1; then
-		sed -i "/$mark_start/Q" $1 # remove all lines after pattern
-		sed -i '$ d' $1 # remove last empty line
-	fi
 }
 
 usage()
@@ -313,10 +292,14 @@ for arg in "$@"; do
 					pip install pygments --break-system-packages
 				fi
 
-				remove_marked_lines ~/.gdbinit
-				mark_start_file ~/.gdbinit
+				if grep "^# ----" ~/.gdbinit; then
+					sed -i "/# ----/Q" ~/.gdbinit # remove all lines after pattern
+					sed -i '$ d' ~/.gdbinit # remove last empty line
+				fi
+
+				echo -e "\n# ----\n" >> ~/.gdbinit
 				cat ./.gdbinit >> ~/.gdbinit
-				mark_end_file ~/.gdbinit
+				echo -e "\n# ---- Don't write after this" >> ~/.gdbinit
 			else
 				>&2 echo "Please, install 'gdb' package"
 				exit 1
