@@ -72,7 +72,7 @@ Clean home, update ```/etc/apt/sources.list```, install dependencies packages:
 $ ./init --clean-home --sources.list --install-packages
 ```
 
-Configure $HOME environment:
+Configure Bash and $HOME environment:
 ```
 $ ./init --bash --bash-completion --local-bin --local-share
 ```
@@ -116,6 +116,9 @@ get source package URIs for a given command or path.<br/>
 
 [qemu-launcher.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/qemu-launcher.sh) -
 launch QEMU with the provided disk or ISO image option.<br/>
+
+[treechmod.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/treechmod.sh) -
+recursively set file and directory permissions in directory using the given umask.<br/>
 
 ## My favorite fonts
 I use these fonts from time to time in my environment.
