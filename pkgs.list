@@ -59,6 +59,7 @@ unclutter
 unclutter-startup
 bash-completion
 exuberant-ctags
+linkchecker
 newsboat
 aptitude
 ripgrep
