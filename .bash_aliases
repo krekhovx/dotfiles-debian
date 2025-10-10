@@ -38,7 +38,7 @@ alias c='cd'
 alias g='cd ~/git'
 alias s='cd ~/sources'
 alias d='cd ~/Downloads'
-alias lb='cd ~/.local/bin' # sorry live-build (lb)
+alias gl='cd ~/.local/bin'
 alias gx='cd ~/.config/xfce4/xfconf/xfce-perchannel-xml'
 
 alias gp='cd /var/cache/pbuilder'
@@ -48,11 +48,10 @@ alias m='cd ~/main'
 alias tos='cd ~/main/.trash && ls -A'
 alias tod='cd ~/main/self && vim todo/head'
 
-alias gw='cd ~/git/work'
-alias gm='cd ~/git/myenv'
 alias gs='cd ~/git/salsa'
-alias gn='cd ~/git/myenv/krxnotes'
-alias gd='cd ~/git/myenv/krxnotes/cheat-sheets/debian'
+alias gg='cd ~/git/github'
+alias gn='cd ~/git/github/krxnotes'
+alias gd='cd ~/git/github/krxnotes/cheat-sheets/debian'
 
 # edit
 if [ -n "$EDITOR" ]; then
