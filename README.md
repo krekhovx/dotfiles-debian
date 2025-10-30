@@ -128,6 +128,7 @@ I use these fonts from time to time in my environment.
 > terminus
 > fira code
 > hack regular
+> agave regular
 
 # Nostalgia
 > unifont
