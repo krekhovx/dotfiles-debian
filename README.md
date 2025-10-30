@@ -132,11 +132,9 @@ I use these fonts from time to time in my environment.
 
 # Nostalgia
 > unifont
-> px ibm ega8
 > glass tty vt220
 > pxplus cordata ppc-21
 > pxplus cordata ppc-400
-> pxplus toshibasat 8x14
 ```
 
 [Nerd Fonts](https://www.nerdfonts.com/)

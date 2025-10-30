@@ -29,15 +29,15 @@ font-manager
 
 # Good Readability
 fonts-hack
+fonts-agave
 fonts-firacode
 fonts-terminus
 xfonts-terminus
 
-# Nostalgia (Also see .fonts)
-# https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
+# Nostalgia
 fonts-unifont
 fonts-glasstty
-fonts-ibm-plex
+# Also see https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
 
 # ------------------------------------------------------------------
 # init Script Dependencies
