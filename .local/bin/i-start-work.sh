@@ -4,7 +4,7 @@
 #
 
 message="Take a break!
-Give your eyes some rest — look out the window,
+Give your eyes some rest - look out the window,
 the world is beautiful!"
 
 if [ -e ~/.local/share/prompt.wav ]; then
