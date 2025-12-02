@@ -51,6 +51,7 @@
       <property name="&lt;Primary&gt;9" type="string" value="xfce4-terminal --maximize"/>
       <property name="&lt;Primary&gt;8" type="string" value="telegram-desktop"/>
       <property name="&lt;Primary&gt;7" type="string" value="audacious"/>
+      <property name="&lt;Primary&gt;4" type="string" value="sh -c 'GDK_BACKEND=x11 audacity'"/>
       <property name="&lt;Primary&gt;3" type="string" value="sh -c 'QT_AUTO_SCREEN_SCALE_FACTOR=0 ~/lmms-1.2.2-linux-x86_64.AppImage'"/>
       <property name="&lt;Primary&gt;2" type="string" value="galculator"/>
       <property name="&lt;Primary&gt;1" type="string" value="xfce4-settings-manager"/>
