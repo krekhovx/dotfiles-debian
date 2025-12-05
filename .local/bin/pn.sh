@@ -4,8 +4,8 @@
 # I'm not concerned about commit descriptions in this project.
 #
 
-gitstatus=$(git status -s)
-tree > ~/git/github/krxnotes/README
+git_status=$(git status -s)
+tree > README
 git add .
-git commit -m "$gitstatus"
+git commit -m "$git_status"
 git push
