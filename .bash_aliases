@@ -83,6 +83,19 @@ alias cc='xsel -p -c; xsel -b -c' # clear primary/clipboard selections
 alias vl='vlock' # quickly lock the terminal
 alias wt='curl wttr.in' # check local weather
 
+# adguardvpn-cli
+vpnoff()
+{
+    adguardvpn-cli disconnect
+}
+
+vpnon()
+{
+    best=$(adguardvpn-cli list-locations | awk 'NR>1 && $NF ~ /^[0-9]+$/ {print $NF, $0}' | \
+           sort -n | head -1 | cut -d' ' -f2- | awk '{print $1}')
+    [ -n "$best" ] && adguardvpn-cli connect -l "$best"
+}
+
 # packages
 searchpkg()
 {
