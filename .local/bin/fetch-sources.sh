@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# Simple script for fetching source codes.
+# Simple script to fetch sources codes.
 # My favorite Debian packages here.
 #
 
-# packages I monitor
+# packages I keep an eye on
 watch_packages=(xfce4-terminal xterm mc tmux vim \
 how-can-i-help popularity-contest telegram-desktop \
 systemd strace eatmydata)
@@ -30,7 +30,7 @@ get_sources()
 	done
 }
 
-apt-get update
+sudo apt-get update
 get_sources "watch" "${watch_packages[*]}"
 get_sources "xfce" "${xfce_packages[*]}"
 get_sources "vim" "${vim_packages[*]}"
