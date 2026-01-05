@@ -5,8 +5,12 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'iberianpig/tig-explorer.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
+
+" directory for storing generated tags instead of project root
+let g:gutentags_cache_dir = expand('~/.cache/gutentags')
 
 syntax on                " syntax highlighting
 filetype indent off      " disable auto indent
@@ -43,16 +47,16 @@ nnoremap <C-m> :tabnew<CR>
 nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprevious<CR>
 " <Leader> key is mapped to \ by default
-" For tig (text-mode interface for Git)
+" for tig (text-mode interface for Git)
 nnoremap <Leader>g :TigGrep<CR>
 nnoremap <Leader>b :TigBlame<CR>
 nnoremap <Leader>t :TigOpenProjectRootDir<CR>
-" Display or hide invisible characters
+" display or hide invisible characters
 nnoremap <Leader>q :set list! listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:↲,precedes:«,extends:»<CR>
-" Copy the current visual selection to the file (save these lines)
+" copy the current visual selection to the file (save these lines)
 vnoremap <C-c> :w !echo '' >> ~/vbuf && cat >> ~/vbuf<CR>:let @+ = getline('.')<CR><CR>
-" Automatic word wrapping
+" automatic word wrapping
 xnoremap <C-i> gq
 
-" Vim jump to the last position when reopening a file
+" vim jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
