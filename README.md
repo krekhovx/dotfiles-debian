@@ -74,7 +74,7 @@ $ ./init --clean-home --sources.list --install-packages
 
 Configure Bash and $HOME environment:
 ```
-$ ./init --bash --bash-completion --local-bin --local-share
+$ ./init --bash --bash-completion --local-bin --local-share --sudo
 ```
 
 Configure Xfce environment and colors:
@@ -82,14 +82,9 @@ Configure Xfce environment and colors:
 $ ./init --xfce --xfce-terminal --dircolors --unclutter
 ```
 
-Text editors, terminal multiplexer, debuger, file navigation:
+Text editors, terminal multiplexer, debuger, file navigation, RSS feed reader:
 ```
-$ ./init --vim --vifm --tmux --mc --mousepad --gdb
-```
-
-RSS feed reader:
-```
-$ ./init --newsboat
+$ ./init --vim --vifm --tmux --mc --mousepad --gdb --newsboat
 ```
 
 The script has other options, but I think you won't need it.
