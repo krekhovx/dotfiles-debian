@@ -74,7 +74,7 @@ $ ./init --clean-home --sources.list --install-packages
 
 Configure Bash and $HOME environment:
 ```
-$ ./init --bash --bash-completion --local-bin --local-share --sudo
+$ ./init --bash --bash-completion --local-bin --local-share
 ```
 
 Configure Xfce environment and colors:
