@@ -72,7 +72,7 @@ $ ./init --help
 
 Clean home, update ```/etc/apt/sources.list```, install dependencies packages:
 ```
-$ ./init --clean-home --sources.list --install-packages
+$ ./init --clean-home --sources-list --install-packages
 ```
 
 Configure Bash and $HOME environment:
