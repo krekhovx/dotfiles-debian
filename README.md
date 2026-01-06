@@ -133,6 +133,8 @@ I use these fonts from time to time in my environment.
 - PXPlus Cordata PPC-21
 - PXPlus Cordata PPC-400
 
+### Useful Links
+
 [Nerd Fonts](https://www.nerdfonts.com/)
 
 [The Oldschool PC Font Resource](https://int10h.org/oldschool-pc-fonts/)
