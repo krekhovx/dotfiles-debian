@@ -64,8 +64,11 @@ Usage information:
 ```
 $ ./init --help
 ```
-**Attention**. Be careful when running this script on your main machine, it does
-not create backup dotfiles and may ~~erase~~ your current working environment.
+
+> [!NOTE]
+>
+> Be careful when running this script on your main machine, it does not create
+> backup dotfiles and may ~~erase~~ your current working environment.
 
 Clean home, update ```/etc/apt/sources.list```, install dependencies packages:
 ```
