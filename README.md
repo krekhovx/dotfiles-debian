@@ -49,6 +49,7 @@ Another one (last screenshot):
 - <strong>Version control system:</strong> ```Git```
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
+- <strong>Desktop-base theme</strong> ```korux-theme```
 - <strong>All Environment Packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
