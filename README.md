@@ -122,16 +122,16 @@ recursively set file and directory permissions in directory using the given umas
 I use these fonts from time to time in my environment.
 
 ### Good readability
-- terminus
-- fira code
-- hack regular
-- agave regular
+- Terminus
+- Fira Code
+- Hack Regular
+- Agave Regular
 
 ### Nostalgia
-- unifont
-- glass tty vt220
-- pxplus cordata ppc-21
-- pxplus cordata ppc-400
+- Unifont
+- Glass TTY VT220
+- PXPlus Cordata PPC-21
+- PXPlus Cordata PPC-400
 
 [Nerd Fonts](https://www.nerdfonts.com/)
 
