@@ -29,7 +29,7 @@ Another one (last screenshot):
 - <strong>Xfce Icon Theme:</strong> ```Tango```
 - <strong>Xfce GTK Theme:</strong> ```Breeze-Dark```
 
-- <strong>Xfce Terminal Font:</strong> ```Terminus```
+- <strong>Xfce Terminal Font:</strong> ```PxPlus Cordata PPC-400```
 - <strong>Xfce Environment Font:</strong> ```PxPlus Cordata PPC-400```
 
 ## Description of the environment
@@ -52,7 +52,7 @@ Another one (last screenshot):
 - <strong>Environment Dependencies:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
-- Install Debian with Xfce.
+- Install the latest stable Debian with Xfce.
 - Clone repository:
 ```
 $ git clone https://github.com/krekhovx/dotfiles-debian.git
@@ -136,3 +136,5 @@ I use these fonts from time to time in my environment.
 ```
 
 [Nerd Fonts](https://www.nerdfonts.com/)
+
+[The Oldschool PC Font Resource](https://int10h.org/oldschool-pc-fonts/)
