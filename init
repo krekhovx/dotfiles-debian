@@ -4,8 +4,8 @@
 # Configures the necessary tools for development and convenience.
 # Minimalistic environment and instruments with old-school fonts.
 #
-# Be careful when running this script on your main machine,
-# it does not create backup dotfiles and may erase your current working environment.
+# (!!!) Be careful when running this script on your main machine, it does not
+# create backup dotfiles and may erase your current working environment.
 #
 # After running:
 # $ ./init --xfce
@@ -47,6 +47,8 @@ Usage: $(basename $0) [option]
   --dircolors            ~/.dircolors installation
 
   --bash-completion      enable bash completion
+
+  --sudo                 add a user to the sudo group
 
   --locales              generate 'en_US' 'ru_RU' locales
 
@@ -150,6 +152,17 @@ for arg in "$@"; do
 			fi
 		;;
 
+		"--sudo")
+			bold_message "Add a $USER to the sudo group"
+			if ! groups $USER | grep -q '\<sudo\>'; then
+				sudo usermod -aG sudo $USER
+			fi
+			# I also like to use this configuration, but be aware
+			# that it is not safe:
+			# $ sudo visudo
+			# user <TAB> ALL=(ALL:ALL) NOPASSWD:ALL
+		;;
+
 		"--locales")
 			bold_message "Generate locales"
 			if check_package locales; then
@@ -160,7 +173,7 @@ for arg in "$@"; do
 					fi
 				done
 
-				echo LANG="en_US.UTF8" | sudo tee /etc/default/locale
+				echo LANG="en_US.UTF-8" | sudo tee /etc/default/locale
 			else
 				>&2 echo "Please, install 'locales' package"
 				exit 1
@@ -169,7 +182,7 @@ for arg in "$@"; do
 
 		"--xfce")
 			bold_message "XFCE installation"
-			if check_package xfce4; then
+			if [ -n $XDG_CURRENT_DESKTOP ] && [ $XDG_CURRENT_DESKTOP == "XFCE" ]; then
 				cp -v ./.config/xfce4/xfconf/xfce-perchannel-xml/* \
 				~/.config/xfce4/xfconf/xfce-perchannel-xml
 			else
@@ -184,6 +197,10 @@ for arg in "$@"; do
 				echo $max_brightness | sudo tee $device_name/brightness
 			fi
 
+			# this is unnecessary for me
+			sudo rm /usr/share/backgrounds/xfce/*
+
+			# install fonts
 			mkdir ~/.fonts &>/dev/null | true
 			cp -v ./.fonts/* ~/.fonts
 			fc-cache -f
@@ -201,7 +218,7 @@ for arg in "$@"; do
 				# Delete unattractive default color schemes.
 				# Look at these ~/.local/share/xfce4/terminal/colorschemes/
 				[ -d /usr/share/xfce4/terminal/colorschemes/ ] && \
-				rm /usr/share/xfce4/terminal/colorschemes/* &>/dev/null
+				sudo rm -f /usr/share/xfce4/terminal/colorschemes/* &>/dev/null
 			else
 				>&2 echo "Please, install 'xfce4-terminal' package"
 				exit 1
@@ -289,7 +306,7 @@ for arg in "$@"; do
 			if check_package gdb; then
 				if [ ! -e ~/.gdbinit ]; then
 					wget -P ~/ https://git.io/.gdbinit
-					pip install pygments --break-system-packages
+					check_package python3-pygments
 				fi
 
 				if grep "^# ----" ~/.gdbinit; then
