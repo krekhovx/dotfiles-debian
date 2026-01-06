@@ -1,10 +1,10 @@
-# ------------------------------------------------------------------
+# --------------------------------------------------------------------
 #
-# Please install Xfce4 Desktop manually
+# Please install the Xfce4 desktop manually
 #
-# ------------------------------------------------------------------
-# Themes and Fonts
-# ------------------------------------------------------------------
+# --------------------------------------------------------------------
+# : Themes and Fonts
+# --------------------------------------------------------------------
 
 # I like Arc-Dark theme from this package
 arc-theme
@@ -37,14 +37,17 @@ xfonts-terminus
 # Nostalgia
 fonts-unifont
 fonts-glasstty
-# Also see https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
+# PxPlus Cordata PPC:
+# https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
 
-# ------------------------------------------------------------------
-# init Script Dependencies
-# https://github.com/krekhovx/dotfiles-debian/blob/master/init
-# ------------------------------------------------------------------
+# --------------------------------------------------------------------
+# : init Script Dependencies
+# : https://github.com/krekhovx/dotfiles-debian/blob/master/init
+# --------------------------------------------------------------------
 
 mc
+fzf
+fzy
 git
 tig
 bat
@@ -53,31 +56,33 @@ vim
 vifm
 tmux
 wipe
-vim-gtk3
-mousepad
-unclutter
-unclutter-startup
-bash-completion
-exuberant-ctags
-linkchecker
-newsboat
-aptitude
-ripgrep
 xclip
 vlock
-fzf
-fzy
 locales
+ripgrep
+aptitude
+newsboat
+vim-gtk3
+apt-file
+mousepad
+eatmydata
 audacious
+unclutter
 galculator
 firefox-esr
+linkchecker
+python3-pip
+bash-completion
+exuberant-ctags
 telegram-desktop
+python3-pygments
+unclutter-startup
 gnome-screensaver
 
-# ------------------------------------------------------------------
-# Script Dependencies .local/bin/*
-# https://github.com/krekhovx/dotfiles-debian/tree/master/.local/bin
-# ------------------------------------------------------------------
+# --------------------------------------------------------------------
+# : Script Dependencies .local/bin/*
+# : https://github.com/krekhovx/dotfiles-debian/tree/master/.local/bin
+# --------------------------------------------------------------------
 
 at
 tar
@@ -96,7 +101,6 @@ findutils
 alsa-utils
 qemu-utils
 qemu-system
-# Please install Docker from this site better:
-#docker # https://docs.docker.com/engine/install/debian/
+dctrl-tools
 
-# ------------------------------------------------------------------
+# --------------------------------------------------------------------
