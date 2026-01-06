@@ -2,10 +2,12 @@
 #
 # This main project script which configure/install my Debian environment.
 # Configures the necessary tools for development and convenience.
-# Minimalistic environment and instruments with old-school fonts.
+# Minimalistic environment and instruments with old-school themes/fonts.
 #
-# (!!!) Be careful when running this script on your main machine, it does not
+# --- (!!!) (!!!) (!!!) ------------------------------------------------
+# Be careful when running this script on your main machine, it does not
 # create backup dotfiles and may erase your current working environment.
+# --- (!!!) (!!!) (!!!) ------------------------------------------------
 #
 # After running:
 # $ ./init --xfce
@@ -36,7 +38,7 @@ Usage: $(basename $0) [option]
 
   [option]
 
-  --install-packages     install environment dependencies
+  --install-packages     install environment packages
 
   --sources-list         sources.list installation
 
