@@ -38,7 +38,7 @@ Usage: $(basename $0) [option]
 
   --install-packages     install environment dependencies
 
-  --sources.list         sources.list installation
+  --sources-list         sources.list installation
 
   --clean-home           cleanup home directory, configure user-dirs.*
 
@@ -105,7 +105,7 @@ for arg in "$@"; do
 			sudo apt-file update
 		;;
 
-		"--sources.list")
+		"--sources-list")
 			bold_message "sources.list installation"
 			sudo cp -v ./sources.list /etc/apt/
 			sudo apt-get update
