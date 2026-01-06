@@ -49,7 +49,7 @@ Another one (last screenshot):
 - <strong>Version control system:</strong> ```Git```
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
-- <strong>Environment Dependencies:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
+- <strong>All Environment Packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
 
 ## Installation
 - Install the latest stable Debian with Xfce.
@@ -70,7 +70,7 @@ $ ./init --help
 > Be careful when running this script on your main machine, it does not create
 > backup dotfiles and may ~~erase~~ your current working environment.
 
-Clean home, update ```/etc/apt/sources.list```, install dependencies packages:
+Clean home, update ```/etc/apt/sources.list```, install packages:
 ```
 $ ./init --clean-home --sources-list --install-packages
 ```
