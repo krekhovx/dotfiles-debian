@@ -1,19 +1,70 @@
-# --------------------------------------------------------------------
+# ------------------------------------------
 #
 # Please install the Xfce4 desktop manually
 #
-# --------------------------------------------------------------------
-# : Themes and Fonts
-# --------------------------------------------------------------------
+# ------------------------------------------
 
-# I like Arc-Dark theme from this package
+# : Text Editors and Terminal Tools
+mc
+fzf
+fzy
+tmux
+vifm
+xsel
+xclip
+ripgrep
+vim
+vim-gtk3
+newsboat
+unclutter
+unclutter-startup
+bash-completion
+
+# : Debian Maintenance
+dput
+cdbs
+blhc
+duck
+quilt
+equivs
+debsums
+lintian
+lintian-brush
+apt-rdepends
+dctrl-tools
+fakeroot
+apt-file
+aptitude
+piuparts
+adequate
+pbuilder
+reportbug
+devscripts
+live-build
+debootstrap
+licensecheck
+debconf-utils
+how-can-i-help
+git-buildpackage
+popularity-contest
+
+# : Git
+tig
+git
+
+# : Themes
+
+# I like 'Arc-Dark' theme from this package
 arc-theme
 
-# I like Adwaita-dark theme from this package
-gnome-themes-extra
+# I have been using these icons for many years
+tango-icon-theme
 
-# I like Breeze-Dark theme from this package
+# I like 'Breeze-Dark' theme from this package
 breeze-gtk-theme
+
+# I like 'Adwaita-dark' theme from this package
+gnome-themes-extra
 
 # Crazy old school things
 darkblood-gtk-theme
@@ -21,11 +72,7 @@ darkfire-gtk-theme
 darkcold-gtk-theme
 darkmint-gtk-theme
 
-# I have been using these icons for many years
-tango-icon-theme
-
-# Font Management
-font-manager
+# : Fonts
 
 # Good Readability
 fonts-hack
@@ -40,67 +87,142 @@ fonts-glasstty
 # PxPlus Cordata PPC:
 # https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
 
-# --------------------------------------------------------------------
-# : init Script Dependencies
-# : https://github.com/krekhovx/dotfiles-debian/blob/master/init
-# --------------------------------------------------------------------
+# : Virtualization
+qemu-utils
+qemu-system
 
-mc
-fzf
-fzy
-git
-tig
-bat
-gdb
-vim
-vifm
-tmux
-wipe
-xclip
-vlock
-locales
-ripgrep
-aptitude
-newsboat
-vim-gtk3
-apt-file
-mousepad
-eatmydata
-audacious
-unclutter
-galculator
-firefox-esr
+# : Documentation
+info
+man-db
+mandoc
+gcc-doc
+manpages
+help2man
+linux-doc
+manpages-dev
+manpages-posix
+manpages-posix-dev
+debian-reference-en
+debian-history
+
+# : Fun
+oneko
+cowsay
+toilet
+figlet
+
+
+# : Network Operations
+wget
+nmap
+curl
+whois
+ssh
+sshpass
+tcpdump
+rtorrent
+dnsutils
+net-tools
+traceroute
 linkchecker
-python3-pip
-bash-completion
-exuberant-ctags
+netcat-traditional
+
+# : Graphic and Multimedia Applications
+zenity
+audacious
+menulibre
+alsa-utils
+font-manager
 telegram-desktop
-python3-pygments
-unclutter-startup
 gnome-screensaver
+simplescreenrecorder
+simple-scan
+firefox-esr
+galculator
+mousepad
+gparted
+peek
+vlc
 
-# --------------------------------------------------------------------
-# : Script Dependencies .local/bin/*
-# : https://github.com/krekhovx/dotfiles-debian/tree/master/.local/bin
-# --------------------------------------------------------------------
+# : Development and Compilation Tools
+gcc
+gdb
+gawk
+mawk
+cmake
+strace
+gettext
+autoconf
+automake
+valgrind
+cppcheck
+eatmydata
+shellcheck
+pkg-config
+python3-pip
+pristine-tar
+autotools-dev
+build-essential
+exuberant-ctags
+python3-pygments
+gobject-introspection
 
+# : Debhelper
+debhelper
+dh-make
+dh-rust
+dh-python
+dh-systemd
+dh-vim-addon
+dh-make-perl
+dh-autoreconf
+dh-strip-nondeterminism
+
+# : QA (Bash)
+bats
+bats-file
+bats-assert
+bats-support
+
+# : System Utilities and Administration
+systemd-coredump
+patchutils
+moreutils
+coreutils
+findutils
+dialog
+hwinfo
+indent
+vlock
+aide
+htop
+wipe
+shc
+bat
 at
 tar
-gpg
-curl
-wget
+zip
+unar
 tree
 sudo
 cron
-xsel
-man-db
-zenity
-openssl
-coreutils
-findutils
-alsa-utils
-qemu-utils
-qemu-system
-dctrl-tools
+smpq
+lhasa
+locales
+icoutils
+fastfetch
+innoextract
 
-# --------------------------------------------------------------------
+# : Cryptography
+libengine-gost-openssl
+gostsum
+openssl
+gpg
+
+# : Games
+vcmi
+quake
+quake2
+quake3
+play.it
+game-data-packager
