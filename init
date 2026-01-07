@@ -25,7 +25,7 @@ check_package()
 	dpkg -l | awk '{print $2}' | grep ^$1$ &>/dev/null && return 0 || return 1
 }
 
-# ------------------------------------------------------------------
+# ----------------------------------------------------------------------
 
 bold_message()
 {
@@ -85,6 +85,8 @@ Usage: $(basename $0) [option]
 
   --telegram-desktop     telegram desktop installation autostart
 
+  --games                game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)
+
   -h, --help             show this help and exit
 
 EOF
@@ -92,7 +94,7 @@ EOF
 exit 0
 }
 
-# ------------------------------------------------------------------
+# ----------------------------------------------------------------------
 
 for arg in "$@"; do
 	case "$arg" in
@@ -385,6 +387,17 @@ for arg in "$@"; do
 			else
 				>&2 echo "Please, install 'telegram-desktop' package"
 				exit 1
+			fi
+		;;
+
+		"--games")
+			bold_message "Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)"
+			if check_package game-data-packages && check_package play.it; then
+				cp -v ./Free-Games ~/
+				sudo cp -r ./root/opt/game-scripts/ /opt
+				sudo chown -R $USER: /opt/game-scripts
+			else
+
 			fi
 		;;
 
