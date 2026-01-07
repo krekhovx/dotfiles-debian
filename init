@@ -39,11 +39,11 @@ Usage: $(basename $0) [option]
 
   [option]
 
-  --install-packages     install environment packages
+  --install-packages     install environment packages from pkgs.list
 
   --sources-list         sources.list installation
 
-  --clean-home           cleanup home directory, configure user-dirs.*
+  --clean-home           remove default XDG dirs, apply user-dirs.*, enable init.d clean-home
 
   --bash                 ~/.bashrc and ~/.bash_aliases installation
 
@@ -53,7 +53,7 @@ Usage: $(basename $0) [option]
 
   --sudo                 add a user to the sudo group
 
-  --locales              generate 'en_US' 'ru_RU' locales
+  --locales              generate en_US/ru_RU locales and set 'en_US' as default
 
   --xfce                 full xfce installation (desktop session)
                          includes all ~/.config/xfce4/xfconf/xfce-perchannel-xml files
@@ -135,6 +135,12 @@ for arg in "$@"; do
 
 			cp -v ./.config/user-dirs.dirs ~/.config
 			cp -v ./.config/user-dirs.locale ~/.config
+
+			sudo cp ./root/etc/init.d/clean-home /etc/init.d
+			sudo chmod 755 /etc/init.d/clean-home
+
+			# Enable clean-home in startup.
+			sudo update-rc.d clean-home defaults
 		;;
 
 		"--bash")
@@ -397,7 +403,9 @@ for arg in "$@"; do
 				sudo cp -r ./root/opt/game-scripts/ /opt
 				sudo chown -R $USER: /opt/game-scripts
 			else
-
+				>&2 echo "Please, install 'game-data-packages' package"
+				>&2 echo "Please, install 'play.it' package"
+				exit 1
 			fi
 		;;
 
