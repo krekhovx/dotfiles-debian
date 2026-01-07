@@ -12,6 +12,7 @@
 # After running:
 # $ ./init --xfce
 # $ ./init --unclutter
+# $ ./init --telegram-desktop
 # need to restart the session.
 #
 
@@ -81,6 +82,8 @@ Usage: $(basename $0) [option]
   --unclutter            unclutter installation
 
   --newsboat             rss feed reader installation
+
+  --telegram-desktop     telegram desktop installation autostart
 
   -h, --help             show this help and exit
 
@@ -187,12 +190,13 @@ for arg in "$@"; do
 			if [ -n $XDG_CURRENT_DESKTOP ] && [ $XDG_CURRENT_DESKTOP == "XFCE" ]; then
 				cp -v ./.config/xfce4/xfconf/xfce-perchannel-xml/* \
 				~/.config/xfce4/xfconf/xfce-perchannel-xml
+				cp -v ./.config/xfce4/helpers.rc ~/.config/xfce4
 			else
-				>&2 echo "Current desktop environment not 'xfce'"
+				>&2 echo "Current desktop environment not 'XFCE'"
 				exit 1
 			fi
 
-			# max brightness for laptops
+			# Max brightness for laptops.
 			device_name=$(find /sys/class/backlight/ -mindepth 1)
 			if [ -n "$device_name" ]; then
 				max_brightness=$(cat $device_name/max_brightness)
@@ -204,9 +208,9 @@ for arg in "$@"; do
 			[ -d /usr/share/backgrounds/xfce/ ] && \
 			sudo rm /usr/share/backgrounds/xfce/* &>/dev/null
 
-			# install fonts
+			# Install fonts.
 			mkdir ~/.fonts &>/dev/null | true
-			cp -v ./.fonts/* ~/.fonts
+			cp -v ./root/usr/share/fonts/truetype/pxplus-cordata/* ~/.fonts
 			fc-cache -f
 		;;
 
@@ -314,8 +318,10 @@ for arg in "$@"; do
 				fi
 
 				if grep "^# ----" ~/.gdbinit; then
-					sed -i "/# ----/Q" ~/.gdbinit # remove all lines after pattern
-					sed -i '$ d' ~/.gdbinit # remove last empty line
+					# Remove all lines after the marker and
+					# clean trailing blank line.
+					sed -i "/# ----/Q" ~/.gdbinit
+					sed -i '$ d' ~/.gdbinit
 				fi
 
 				echo -e "\n# ----\n" >> ~/.gdbinit
@@ -336,7 +342,7 @@ for arg in "$@"; do
 		"--local-share")
 			bold_message "~/.local/share installation"
 			mkdir ~/.local/share &>/dev/null | true
-			cp -rv ./.local/share/* ~/.local/share
+			rsync -av --exclude 'applications' ./.local/share/ ~/.local/share/
 		;;
 
 		"--gitconfig")
@@ -367,6 +373,17 @@ for arg in "$@"; do
 				cp -v ./.newsboat/* ~/.newsboat
 			else
 				>&2 echo "Please, install 'newsboat' package"
+				exit 1
+			fi
+		;;
+
+		"--telegram-desktop")
+			bold_message "Telegram Desktop installation autostart"
+			if check_package telegram-desktop; then
+				mkdir ~/.config/autostart &>/dev/null | true
+				cp -v ./.config/autostart/org.telegram.desktop.desktop ~/.config/autostart
+			else
+				>&2 echo "Please, install 'telegram-desktop' package"
 				exit 1
 			fi
 		;;

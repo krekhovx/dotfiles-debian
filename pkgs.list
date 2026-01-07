@@ -207,6 +207,7 @@ tree
 sudo
 cron
 smpq
+rsync
 lhasa
 locales
 icoutils

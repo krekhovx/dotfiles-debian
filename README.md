@@ -86,9 +86,14 @@ Configure Xfce environment and colors:
 $ ./init --xfce --xfce-terminal --dircolors --unclutter
 ```
 
-Text editors, terminal multiplexer, debuger, file navigation, RSS feed reader:
+Text editors, terminal multiplexer, debugger, file navigation:
 ```
-$ ./init --vim --vifm --tmux --mc --mousepad --gdb --newsboat
+$ ./init --vim --vifm --tmux --mc --mousepad --gdb
+```
+
+RSS feed reader, Telegram Desktop autostart:
+```
+$ ./init --newsboat --telegram-desktop
 ```
 
 The script has other options, but I think you won't need it.
