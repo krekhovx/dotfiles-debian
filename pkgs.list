@@ -1,8 +1,8 @@
-# -----------------------------------------
+# -------------------------------------------------
 #
-# Please install the Xfce4 desktop manually
+# Please install Xfce4, Xfwm4, and LightDM manually
 #
-# -----------------------------------------
+# -------------------------------------------------
 
 # : Text Editors and Terminal Tools
 mc
@@ -28,6 +28,7 @@ duck
 quilt
 equivs
 debsums
+tasksel
 lintian
 lintian-brush
 apt-rdepends
