@@ -99,13 +99,13 @@ Location: [.local/bin/](https://github.com/krekhovx/dotfiles-debian/blob/master/
 Few examples:<br/>
 
 [multi-git.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/multi-git.sh) -
-execute Git commands like 'pull', 'status' across multiple Git projects for easy management.<br/>
+execute Git commands like ```pull```, ```status``` across multiple Git projects for easy management.<br/>
 
 [crypt.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/crypt.sh) -
 encrypt/decrypt regular file with sensitive information (using a password).<br/>
 
 [deb-clean.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/deb-clean.sh) -
-remove 'rc' (removed but not purged) packages plus debs autoremove and autoclean.<br/>
+remove ```rc``` (removed but not purged) packages plus debs autoremove and autoclean.<br/>
 
 [apt-recent-installs.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/apt-recent-installs.sh) -
 parses the ```/var/log/apt/history.log``` file to extract installation dates and package lists.<br/>
@@ -118,6 +118,8 @@ launch QEMU with the provided disk or ISO image option.<br/>
 
 [treechmod.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/treechmod.sh) -
 recursively set file and directory permissions in directory using the given umask.<br/>
+
+etc.
 
 ## My favorite fonts
 I use these fonts from time to time in my environment.

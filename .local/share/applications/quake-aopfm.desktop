@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Quake 1: Abyss of Pandemonium - Final Mission
+Comment=Third-party expansion for the classic first person shooter
+Icon=/usr/share/icons/hicolor/256x256/apps/quake.png
+Exec=/usr/games/quake -- -game aopfm_v2
+Actions=
+Categories=ActionGame;Game;
+Keywords=first person shooter;fps;3d;deathmatch;quake 1;

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+main_user=$(getent passwd 1000 | cut -d ':' -f1)
+home_dir="/home/$main_user"
+
+if [ -d "$home_dir" ]; then
+	rc-alert > "$home_dir/rc-alert"
+	chmod 600 "$home_dir/rc-alert"
+	how-can-i-help -o > "$home_dir/how-can-i-help"
+	chmod 600 "$home_dir/how-can-i-help"
+	how-can-i-help -o -s newcomer > "$home_dir/how-can-i-help-newcomer"
+	chmod 600 "$home_dir/how-can-i-help-newcomer"
+fi

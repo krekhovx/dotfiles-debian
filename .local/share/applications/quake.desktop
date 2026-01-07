@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Quake
+Comment=Classic first person shooter
+Icon=/usr/share/icons/hicolor/256x256/apps/quake.png
+Exec=/usr/games/quake
+Actions=
+Categories=ActionGame;Game;
+Keywords=first person shooter;fps;3d;deathmatch;quake 1;

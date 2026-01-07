@@ -85,7 +85,7 @@ xfonts-terminus
 fonts-unifont
 fonts-glasstty
 # PxPlus Cordata PPC:
-# https://github.com/krekhovx/dotfiles-debian/tree/master/.fonts
+# https://github.com/krekhovx/dotfiles-debian/tree/master/root/usr/share/fonts/truetype/pxplus-cordata/*.ttf
 
 # : Virtualization
 qemu-utils

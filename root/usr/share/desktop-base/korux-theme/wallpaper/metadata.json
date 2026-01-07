@@ -1,0 +1,13 @@
+{
+    "KPlugin": {
+        "Name": "KoruX",
+        "Id": "KoruX",
+        "License": "GPLv3+",
+        "Authors": [
+            {
+                "Name": "Kirill Rekhov",
+                "Email": "krekhov.dev@gmail.com"
+            }
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides: clean-home
+# Required-Start: $local_fs
+# Required-Stop: $local_fs
+# Default-Start: 5
+# Default-Stop: 0 6
+# Short-Description: Commands for users home directories
+# Description: Operations before shutdown/reboot
+### END INIT INFO
+
+case "$1" in
+	stop)
+		# You can edit this list and add your own files for cleanup to
+		# start with a clean session next time
+
+		files=(
+			".bash_history"
+			".gdb_history"
+			".tig_history"
+			".viminfo"
+			".lesshst"
+			".wget-hsts"
+			"signature.asc"
+			".cache/gutentags"
+			"Downloads/Telegram Desktop/"
+		)
+
+		main_user="/home/$(getent passwd 1000 | cut -d ':' -f1)"
+
+		for f in "${files[@]}"; do
+			for u in /root "$main_user"; do
+				if [ -e "$u/$f" ]; then
+					rm -rf "$u/$f"
+				fi
+				done
+		done
+
+		# Secure the .ssh directory and its contents by setting
+		# appropriate permissions
+
+		if [ -d "$main_user/.ssh" ]; then
+			chmod 700 "$main_user/.ssh"
+			chmod 600 "$main_user/.ssh/"* 2>/dev/null
+		fi
+
+		# Clean up the local package cache to free up disk space
+		apt-get clean
+
+		exit 0
+	;;
+esac

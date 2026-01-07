@@ -143,3 +143,11 @@ wgetf() {
     esac
     wget "$url"
 }
+
+# games
+alias q1='quake'
+alias q2='quake2'
+alias q3='quake3'
+alias h3='vcmiclient'
+alias d1='devilutionx --data-dir /opt/game-scripts/diablo1/data'
+alias d2='diablo-2'

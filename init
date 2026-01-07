@@ -199,8 +199,10 @@ for arg in "$@"; do
 				echo $max_brightness | sudo tee $device_name/brightness
 			fi
 
-			# this is unnecessary for me
-			sudo rm /usr/share/backgrounds/xfce/*
+			# Delete unattractive default backgrounds.
+			# Look at these ~/.local/share/backgrounds/
+			[ -d /usr/share/backgrounds/xfce/ ] && \
+			sudo rm /usr/share/backgrounds/xfce/* &>/dev/null
 
 			# install fonts
 			mkdir ~/.fonts &>/dev/null | true

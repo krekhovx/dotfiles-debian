@@ -1,0 +1,71 @@
+#
+# If you are bored, you can take a look at this list of games.
+#
+# NOTE: This is not a complete list of all free games available for Debian.
+# This file contains just a small selection of recommended and popular titles.
+# For a full overview, visit: https://blends.debian.org/games/tasks/
+#
+# Thanks to the fellows from the Debian Games Team
+# <debian-devel-games@lists.debian.org> for their work.
+#
+# You can also take a look at `/root/opt/game-scripts` and learn more with:
+# $ game-data-packager --help
+# $ play.it --help
+#
+# Use it if you want install '/root/opt/game-scripts' on your system:
+# $ ./init --games
+#
+# and you can use meta-packages to install genres in bulk, example:
+# $ apt install games-arcade games-rpg
+#
+# see available genres:
+# $ apt-cache depends games-all
+# or:
+# $ apt-cache search '^games-'
+#
+# ------------------------------------------------------------------
+# Penguins
+# ------------------------------------------------------------------
+pingus             # https://blends.debian.org/games/tasks/strategy
+supertux           # https://blends.debian.org/games/tasks/platform
+supertuxkart       # https://blends.debian.org/games/tasks/racing
+extremetuxracer    # https://blends.debian.org/games/tasks/racing
+# ------------------------------------------------------------------
+# Strategy/RPG
+# ------------------------------------------------------------------
+0ad                # https://blends.debian.org/games/tasks/strategy
+freeciv            # https://blends.debian.org/games/tasks/strategy
+wesnoth            # https://blends.debian.org/games/tasks/strategy
+warzone2100        # https://blends.debian.org/games/tasks/strategy
+# ------------------------------------------------------------------
+# Like Diablo 1
+# ------------------------------------------------------------------
+flare              # https://blends.debian.org/games/tasks/rpg
+# ------------------------------------------------------------------
+# Like Quake 3 Arena
+# ------------------------------------------------------------------
+xonotic            # https://xonotic.org/ (not in Debian)
+openarena          # https://blends.debian.org/games/tasks/fps
+# ------------------------------------------------------------------
+# Doom
+# ------------------------------------------------------------------
+freedm             # https://blends.debian.org/games/tasks/fps
+freedoom           # https://blends.debian.org/games/tasks/fps
+rbdoom3bfg         # https://blends.debian.org/games/tasks/fps
+# ------------------------------------------------------------------
+# Arcade, Puzzle, etc
+# ------------------------------------------------------------------
+supertransball2    # https://blends.debian.org/games/tasks/arcade
+frozen-bubble      # https://blends.debian.org/games/tasks/perl-dev
+open-invaders      # https://blends.debian.org/games/tasks/arcade
+pekka-kana-2       # https://blends.debian.org/games/tasks/arcade
+lbreakout2         # https://blends.debian.org/games/tasks/arcade
+neverball          # https://blends.debian.org/games/tasks/arcade
+neverputt          # https://blends.debian.org/games/tasks/sport
+teeworlds          # https://blends.debian.org/games/tasks/fps
+typespeed          # https://blends.debian.org/games/tasks/typing
+gnujump            # https://blends.debian.org/games/tasks/platform
+pacman             # https://blends.debian.org/games/tasks/arcade
+chromium-bsu       # https://blends.debian.org/games/tasks/shootemup
+torus-trooper      # https://blends.debian.org/games/tasks/shootemup
+# ------------------------------------------------------------------

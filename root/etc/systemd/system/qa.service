@@ -1,0 +1,12 @@
+[Unit]
+Description=Save QA utilities output to UID 1000 home at boot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=1000
+Type=oneshot
+ExecStart=/usr/local/bin/qa-at-boot
+
+[Install]
+WantedBy=multi-user.target
