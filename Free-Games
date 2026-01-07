@@ -8,12 +8,15 @@
 # Thanks to the fellows from the Debian Games Team
 # <debian-devel-games@lists.debian.org> for their work.
 #
-# You can also take a look at `/root/opt/game-scripts` and learn more with:
+# You can also take a look at '/root/opt/game-scripts' and learn more with:
 # $ game-data-packager --help
 # $ play.it --help
 #
 # Use it if you want install '/root/opt/game-scripts' on your system:
 # $ ./init --games
+#
+# after installation, simply choose any game directory and
+# run its 'install.sh' script to set it up.
 #
 # and you can use meta-packages to install genres in bulk, example:
 # $ apt install games-arcade games-rpg
