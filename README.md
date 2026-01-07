@@ -70,6 +70,7 @@ $ ./init --help
 >
 > Be careful when running this script on your main machine, it does not create
 > backup dotfiles and may ~~erase~~ your current working environment.
+> It's better to read the script before using it. It's simple.
 
 Clean home, update ```/etc/apt/sources.list```, install packages:
 ```
@@ -91,9 +92,9 @@ Text editors, terminal multiplexer, debugger, file navigation:
 $ ./init --vim --vifm --tmux --mc --mousepad --gdb
 ```
 
-RSS feed reader, Telegram Desktop autostart:
+RSS feed reader, Telegram Desktop autostart, Firefox:
 ```
-$ ./init --newsboat --telegram-desktop
+$ ./init --newsboat --telegram-desktop --firefox
 ```
 
 Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3):

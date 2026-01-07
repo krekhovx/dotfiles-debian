@@ -4,10 +4,11 @@
 # Configures the necessary tools for development and convenience.
 # Minimalistic environment and instruments with old-school themes/fonts.
 #
-# --- (!!!) (!!!) (!!!) ------------------------------------------------
+# --- (!!!) (!!!) (!!!) -------------------------- (!!!) (!!!) (!!!) ---
 # Be careful when running this script on your main machine, it does not
 # create backup dotfiles and may erase your current working environment.
-# --- (!!!) (!!!) (!!!) ------------------------------------------------
+# It's better to read the script before using it. It's simple.
+# --- (!!!) (!!!) (!!!) -------------------------- (!!!) (!!!) (!!!) ---
 #
 # After running:
 # $ ./init --xfce
@@ -86,6 +87,8 @@ Usage: $(basename $0) [option]
   --telegram-desktop     telegram desktop installation autostart
 
   --games                game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)
+
+  --firefox              install firefox clean profiles with custom user.js
 
   -h, --help             show this help and exit
 
@@ -400,11 +403,21 @@ for arg in "$@"; do
 			bold_message "Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)"
 			if check_package game-data-packages && check_package play.it; then
 				cp -v ./Free-Games ~/
-				sudo cp -r ./root/opt/game-scripts/ /opt
+				sudo cp -vr ./root/opt/game-scripts/ /opt
 				sudo chown -R $USER: /opt/game-scripts
 			else
 				>&2 echo "Please, install 'game-data-packages' package"
 				>&2 echo "Please, install 'play.it' package"
+				exit 1
+			fi
+		;;
+
+		"--firefox")
+			bold_message "Install Firefox clean profiles with custom user.js"
+			if check_package firefox-esr; then
+				cp -vr ./.mozilla ~/
+			else
+				>&2 echo "Please, install 'firefox-esr' package"
 				exit 1
 			fi
 		;;
