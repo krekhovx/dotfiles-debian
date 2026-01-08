@@ -12,6 +12,7 @@
 #
 # After running:
 # $ ./init --xfce
+# $ ./init --lightdm
 # $ ./init --unclutter
 # $ ./init --telegram-desktop
 # need to restart the session.
@@ -89,6 +90,9 @@ Usage: $(basename $0) [option]
   --games                game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)
 
   --firefox              install firefox clean profiles with custom user.js
+
+  --lightdm              lightdm installation
+                         /etc/lightdm/lightdm-gtk-greeter.conf
 
   -h, --help             show this help and exit
 
@@ -401,12 +405,14 @@ for arg in "$@"; do
 
 		"--games")
 			bold_message "Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)"
-			if check_package game-data-packages && check_package play.it; then
+			if check_package game-data-packager && check_package play.it; then
 				cp -v ./Free-Games ~/
+				mkdir ~/.local/share/applications &>/dev/null | true
+				cp -v ./.local/share/applications/* ~/.local/share/applications
 				sudo cp -vr ./root/opt/game-scripts/ /opt
 				sudo chown -R $USER: /opt/game-scripts
 			else
-				>&2 echo "Please, install 'game-data-packages' package"
+				>&2 echo "Please, install 'game-data-packager' package"
 				>&2 echo "Please, install 'play.it' package"
 				exit 1
 			fi
@@ -418,6 +424,17 @@ for arg in "$@"; do
 				cp -vr ./.mozilla ~/
 			else
 				>&2 echo "Please, install 'firefox-esr' package"
+				exit 1
+			fi
+		;;
+
+		"--lightdm")
+			bold_message "LightDM installation"
+			if check_package lightdm-gtk-greeter; then
+				sudo cp -v ./root/etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
+				sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
+			else
+				>&2 echo "Please, install 'lightdm-gtk-greeter' package"
 				exit 1
 			fi
 		;;

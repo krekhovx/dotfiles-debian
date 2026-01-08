@@ -82,9 +82,9 @@ Configure Bash and $HOME environment:
 $ ./init --bash --bash-completion --local-bin --local-share
 ```
 
-Configure Xfce environment and colors:
+Configure Xfce environment, LightDM and colors:
 ```
-$ ./init --xfce --xfce-terminal --dircolors --unclutter
+$ ./init --xfce --xfce-terminal --lightdm --dircolors --unclutter
 ```
 
 Text editors, terminal multiplexer, debugger, file navigation:
