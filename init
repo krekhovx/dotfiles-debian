@@ -330,7 +330,7 @@ for arg in "$@"; do
 			bold_message "Vifm installation"
 			if check_package vifm; then
 				mkdir ~/.config/vifm &>/dev/null | true
-				sudo mkdir /root/.config/vifm &>/dev/null | true
+				sudo mkdir -p /root/.config/vifm &>/dev/null | true
 				cp -v ./.config/vifm/vifmrc ~/.config/vifm/vifmrc
 				sudo cp -v ./.config/vifm/vifmrc /root/.config/vifm/vifmrc
 			else
@@ -347,11 +347,9 @@ for arg in "$@"; do
 					check_package python3-pygments
 				fi
 
-				if grep "^# ----" ~/.gdbinit; then
-					# Remove all lines after the marker and
-					# clean trailing blank line.
-					sed -i "/# ----/Q" ~/.gdbinit
-					sed -i '$ d' ~/.gdbinit
+				if grep -q "^# ----" ~/.gdbinit; then
+					awk '/^# ----/{exit} {print}' ~/.gdbinit > ~/.gdbinit.new
+					mv ~/.gdbinit.new ~/.gdbinit
 				fi
 
 				echo -e "\n# ----\n" >> ~/.gdbinit
