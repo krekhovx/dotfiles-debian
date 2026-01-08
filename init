@@ -94,6 +94,9 @@ Usage: $(basename $0) [option]
   --lightdm              lightdm installation
                          /etc/lightdm/lightdm-gtk-greeter.conf
 
+  --ssh-server           ssh server installation
+                         /etc/ssh/sshd_config
+
   -h, --help             show this help and exit
 
 EOF
@@ -435,6 +438,18 @@ for arg in "$@"; do
 				sudo chmod 644 /etc/lightdm/lightdm-gtk-greeter.conf
 			else
 				>&2 echo "Please, install 'lightdm-gtk-greeter' package"
+				exit 1
+			fi
+		;;
+
+		"--ssh-server")
+			bold_message "SSH server installation"
+			if check_package openssh-server; then
+				sudo cp -v ./root/etc/ssh/sshd_config /etc/ssh
+				sudo chmod 644 /etc/ssh/sshd_config
+
+			else
+				>&2 echo "Please, install 'openssh-server' package"
 				exit 1
 			fi
 		;;
