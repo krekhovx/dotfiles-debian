@@ -47,7 +47,7 @@ Usage: $(basename $0) [option]
 
   --clean-home           remove default XDG dirs, apply user-dirs.*, enable init.d clean-home
 
-  --bash                 ~/.bashrc and ~/.bash_aliases installation
+  --bash                 ~/.bashrc and ~/.bash_aliases installation, also /etc/inputrc
 
   --dircolors            ~/.dircolors installation
 
@@ -157,6 +157,8 @@ for arg in "$@"; do
 			bold_message "Bash installation"
 			cp -v ./.bashrc ~/
 			cp -v ./.bash_aliases ~/
+			sudo cp -v ./root/etc/inputrc /etc
+			sudo chmod 644 /etc/inputrc
 		;;
 
 		"--dircolors")
