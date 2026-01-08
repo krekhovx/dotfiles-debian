@@ -114,14 +114,19 @@ for arg in "$@"; do
 	case "$arg" in
 		"--install-packages")
 			bold_message "Install environment packages from pkgs.list"
-			set +e
-			for p in $(grep -v '^#' pkgs.list); do
-				if ! check_package $p; then
-					sudo eatmydata apt-get -y install $p
-					echo -e "$?\n"
-				fi
-			done
-			set -e
+			if check_package eatmydata; then
+				set +e
+				for p in $(grep -v '^#' pkgs.list); do
+					if ! check_package $p; then
+						sudo eatmydata apt-get -y install $p
+						echo -e "$?\n"
+					fi
+				done
+				set -e
+			else
+				>&2 echo "Please, install 'eatmydata' package"
+				exit 1
+			fi
 
 			sudo mandb
 			sudo apt-file update
@@ -479,6 +484,7 @@ for arg in "$@"; do
 			bold_message "Install system default configs"
 			sudo cp -v ./root/etc/default/{console-setup,grub,locale} /etc/default
 			sudo chmod 644 /etc/default/{console-setup,grub,locale}
+			sudo update-grub
 		;;
 
 		"-h" | "--help") usage ;;
