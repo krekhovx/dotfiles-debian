@@ -43,7 +43,7 @@ Usage: $(basename $0) [option]
 
   --install-packages     install environment packages from pkgs.list
 
-  --sources-list         sources.list installation
+  --sources-list         sources.list installation (Trixie)
 
   --clean-home           remove default XDG dirs, apply user-dirs.*, enable init.d clean-home
 
@@ -53,7 +53,7 @@ Usage: $(basename $0) [option]
 
   --bash-completion      enable bash completion
 
-  --sudo                 add a user to the sudo group
+  --sudo                 add a $USER to the sudo group
 
   --locales              generate en_US/ru_RU locales and set 'en_US' as default
 
@@ -63,13 +63,13 @@ Usage: $(basename $0) [option]
   --xfce-terminal        xfce terminal emulator installation
                          ~/.config/xfce4/terminal/terminalrc + colorschemes
 
-  --mousepad             mousepad text editor installation
+  --mousepad             mousepad installation
 
   --mc                   midnight commander installation with vim hotkeys
 
   --tmux                 terminal multiplexer installation
 
-  --vim                  vim text editor installation with plugins
+  --vim                  vim installation with plugins
 
   --vifm                 vifm installation
 
@@ -87,9 +87,9 @@ Usage: $(basename $0) [option]
 
   --telegram-desktop     telegram desktop installation autostart
 
-  --games                game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)
-
   --firefox              install firefox clean profiles with custom user.js
+
+  --games                game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)
 
   --lightdm              lightdm installation
                          /etc/lightdm/lightdm-gtk-greeter.conf
@@ -98,6 +98,8 @@ Usage: $(basename $0) [option]
                          /etc/ssh/sshd_config
 
   --qa-debian-service    install systemd service for running QA Debian tools at startup
+
+  --system-defaults      install system default configs
 
   -h, --help             show this help and exit
 
@@ -111,6 +113,7 @@ exit 0
 for arg in "$@"; do
 	case "$arg" in
 		"--install-packages")
+			bold_message "Install environment packages from pkgs.list"
 			set +e
 			for p in $(grep -v '^#' pkgs.list); do
 				if ! check_package $p; then
@@ -125,7 +128,7 @@ for arg in "$@"; do
 		;;
 
 		"--sources-list")
-			bold_message "sources.list installation"
+			bold_message "sources.list installation (Trixie)"
 			sudo cp -v ./sources.list /etc/apt/
 			sudo apt-get update
 		;;
@@ -332,7 +335,7 @@ for arg in "$@"; do
 		;;
 
 		"--gdb")
-			bold_message "Gdb installation"
+			bold_message "GDB debugger installation"
 			if check_package gdb; then
 				if [ ! -e ~/.gdbinit ]; then
 					wget -P ~/ https://git.io/.gdbinit
@@ -410,6 +413,16 @@ for arg in "$@"; do
 			fi
 		;;
 
+		"--firefox")
+			bold_message "Install Firefox clean profiles with custom user.js"
+			if check_package firefox-esr; then
+				cp -vr ./.mozilla ~/
+			else
+				>&2 echo "Please, install 'firefox-esr' package"
+				exit 1
+			fi
+		;;
+
 		"--games")
 			bold_message "Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3)"
 			if check_package game-data-packager && check_package play.it; then
@@ -421,16 +434,6 @@ for arg in "$@"; do
 			else
 				>&2 echo "Please, install 'game-data-packager' package"
 				>&2 echo "Please, install 'play.it' package"
-				exit 1
-			fi
-		;;
-
-		"--firefox")
-			bold_message "Install Firefox clean profiles with custom user.js"
-			if check_package firefox-esr; then
-				cp -vr ./.mozilla ~/
-			else
-				>&2 echo "Please, install 'firefox-esr' package"
 				exit 1
 			fi
 		;;
@@ -459,6 +462,7 @@ for arg in "$@"; do
 		;;
 
 		"--qa-debian-service")
+			bold_message "Install systemd service for running QA Debian tools at startup"
 			# Service runs a script creating files in the home directory
 			# at system startup. Files contain output from QA tools
 			# such as 'how-can-i-help', useful for helping Debian.
@@ -469,6 +473,12 @@ for arg in "$@"; do
 			systemctl daemon-reload
 			systemctl enable qa.service
 			systemctl start qa.service
+		;;
+
+		"--system-defaults")
+			bold_message "Install system default configs"
+			sudo cp -v ./root/etc/default/{console-setup,grub,locale} /etc/default
+			sudo chmod 644 /etc/default/{console-setup,grub,locale}
 		;;
 
 		"-h" | "--help") usage ;;
