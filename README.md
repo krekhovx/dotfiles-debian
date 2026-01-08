@@ -102,9 +102,9 @@ Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3):
 $ ./init --games
 ```
 
-Configure SSH server:
+Configure SSH server, enable QA Debian service:
 ```
-$ ./init --ssh-server
+$ ./init --ssh-server --qa-debian-service
 ```
 
 The script has other options, but I think you won't need it.

@@ -97,6 +97,8 @@ Usage: $(basename $0) [option]
   --ssh-server           ssh server installation
                          /etc/ssh/sshd_config
 
+  --qa-debian-service    install systemd service for running QA Debian tools at startup
+
   -h, --help             show this help and exit
 
 EOF
@@ -454,6 +456,19 @@ for arg in "$@"; do
 				>&2 echo "Please, install 'openssh-server' package"
 				exit 1
 			fi
+		;;
+
+		"--qa-debian-service")
+			# Service runs a script creating files in the home directory
+			# at system startup. Files contain output from QA tools
+			# such as 'how-can-i-help', useful for helping Debian.
+			sudo cp -v ./root/etc/systemd/system/qa.service /etc/systemd/system
+			sudo cp -v ./root/usr/local/bin/qa-at-boot /usr/local/bin
+			sudo chmod 644 /etc/systemd/system/qa.service
+			sudo chmod 755 /usr/local/bin/qa-at-boot
+			systemctl daemon-reload
+			systemctl enable qa.service
+			systemctl start qa.service
 		;;
 
 		"-h" | "--help") usage ;;
