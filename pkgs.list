@@ -173,7 +173,6 @@ debhelper
 dh-make
 dh-rust
 dh-python
-dh-systemd
 dh-vim-addon
 dh-make-perl
 dh-autoreconf
