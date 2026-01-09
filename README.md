@@ -49,7 +49,7 @@ Another one (last screenshot):
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
 - <strong>Desktop-base theme:</strong> ```korux-theme```
-- <strong>All Environment Packages:</strong> [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list))
+- <strong>All Environment Packages:</strong> [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)
 - <strong>Games:</strong> ```Diablo 1```, ```Diablo 2```, ```Heroes 3```, ```Quake 1```, ```Quake 2```, ```Quake 3```
 
 ## Installation
