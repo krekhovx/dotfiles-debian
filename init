@@ -3,6 +3,7 @@
 # This main project script which configure/install my Debian environment.
 # Configures the necessary tools for development and convenience.
 # Minimalistic environment and instruments with old-school themes/fonts.
+# Tested on Debian Bookworm and Trixie, but I currently use it on Trixie.
 #
 # --- (!!!) (!!!) (!!!) -------------------------- (!!!) (!!!) (!!!) ---
 # Be careful when running this script on your main machine, it does not
@@ -14,6 +15,10 @@
 # $ ./init --xfce
 # $ ./init --lightdm
 # $ ./init --unclutter
+# $ ./init --clean-home
+# $ ./init --purge-packages
+# $ ./init --set-korux-theme
+# $ ./init --system-defaults
 # $ ./init --telegram-desktop
 # need to restart the session.
 #
@@ -143,13 +148,15 @@ for arg in "$@"; do
 			sudo apt-get purge -y mlterm* xiterm+thai mozc* anthy* goldendict \
 			quodlibet exfalso im-config ibus mythes* myspell* hyphen* \
 			hunspell* aspell* libreoffice-l10n* firefox-esr-l10n* \
-			debian-reference-es debian-reference-it fortunes-debian-hints fortune-mod
+			debian-reference-es debian-reference-it fortunes-debian-hints fortune-mod \
+			fcitx5 goldendict-ng xsane
 
 			sudo apt-get autoremove -y
 			sudo apt-get autoclean
 
-			# ibus depends on dconf-cli
-			sudo apt-get install dconf-cli
+			# These packages get removed as dependencies
+			# unintentionally, so I reinstall them.
+			sudo apt-get install dconf-cli keyutils
 
 			dpkg -l | awk '/^rc/{print $2}' | xargs sudo apt-get purge -y
 
