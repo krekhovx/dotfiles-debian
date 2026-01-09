@@ -21,7 +21,11 @@ The repository is updated frequently.
 
 Xfce Desktop (last screenshot):
 ![screenshot](./images/example-a.png)
+
+Another one (last screenshot):
 ![screenshot](./images/example-b.png)
+
+Another one (last screenshot):
 ![screenshot](./images/example-c.png)
 
 Terminal Emulator with Tmux (last screenshot):
