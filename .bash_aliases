@@ -145,7 +145,7 @@ wgetf() {
 }
 
 # games
-alias q1='quake'
+alias q1='quakespasm -basedir /usr/share/games/quake'
 alias q2='quake2'
 alias q3='quake3'
 alias h3='vcmiclient'
