@@ -32,7 +32,7 @@ sudo apt install -y play.it
 sudo rm /etc/apt/sources.list.d/sid.list
 sudo apt update
 
-git clone --branch main --depth 1 http://git.vv221.fr/play.it/games-vv221 play.it-tmp
+git clone --branch main --depth 1 https://git.vv221.fr/play.it/games-vv221 play.it-tmp
 cd play.it-tmp/games/
 mkdir data
 
