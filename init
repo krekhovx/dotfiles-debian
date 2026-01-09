@@ -505,9 +505,9 @@ for arg in "$@"; do
 			sudo cp -v ./root/usr/local/bin/qa-at-boot /usr/local/bin
 			sudo chmod 644 /etc/systemd/system/qa.service
 			sudo chmod 755 /usr/local/bin/qa-at-boot
-			systemctl daemon-reload
-			systemctl enable qa.service
-			systemctl start qa.service
+			sudo systemctl daemon-reload
+			sudo systemctl enable qa.service
+			sudo systemctl start qa.service
 		;;
 
 		"--system-defaults")
