@@ -5,8 +5,9 @@
 ## dotfiles-debian
 This is my Debian dotfiles (backup). Configuration files, useful scripts and
 aliases for my work, backgrounds, notes, hotkeys, various development tools,
-color schemes, etc. I’m using the default GTK themes/icons from Debian - nothing
-special (see [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)).
+color schemes, and launchers for some retro/classic games, etc. I’m using the
+default GTK themes/icons from Debian, nothing special (see
+[pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)).
 
 I'm lazy, so there's a script
 [init](https://github.com/krekhovx/dotfiles-debian/blob/master/init) which
@@ -28,12 +29,10 @@ Another one (last screenshot):
 
 - <strong>Xfce Icon Theme:</strong> ```Tango```
 - <strong>Xfce GTK Theme:</strong> ```Breeze-Dark```
-
-- <strong>Xfce Terminal Font:</strong> ```PxPlus Cordata PPC-400```
-- <strong>Xfce Environment Font:</strong> ```PxPlus Cordata PPC-400```
+- <strong>Environment Font:</strong> ```PxPlus Cordata PPC-400```
 
 ## Description of the environment
-- <strong>OS:</strong> ```Debian```
+- <strong>OS:</strong> ```Debian 13 (Trixie)```
 - <strong>DE:</strong> ```Xfce4```
 - <strong>DM:</strong> ```LightDM```
 - <strong>WM:</strong> ```Xfwm4```
