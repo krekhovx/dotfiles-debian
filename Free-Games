@@ -15,13 +15,14 @@
 # Use it if you want install '/root/opt/game-scripts' on your system:
 # $ ./init --games
 #
-# after installation, simply choose any game directory and
-# run its 'install.sh' script to set it up.
+# After installation, simply choose any game directory and run its install.sh
+# script to set it up. Then use the aliases from .bash_aliases to launch the
+# games.
 #
-# and you can use meta-packages to install genres in bulk, example:
+# And you can use meta-packages to install genres in bulk, example:
 # $ apt install games-arcade games-rpg
 #
-# see available genres:
+# See available genres:
 # $ apt-cache depends games-all
 # or:
 # $ apt-cache search '^games-'
