@@ -9,6 +9,9 @@ color schemes, and launchers for some retro/classic games, etc. I’m using the
 default GTK themes/icons from Debian, nothing special (see
 [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)).
 
+Maintained by a [Debian Maintainer](https://nm.debian.org/person/krekhov/) and
+contributor to the Debian project.
+
 I'm lazy, so there's a script
 [init](https://github.com/krekhovx/dotfiles-debian/blob/master/init) which
 initialize/configure my work environment automatically. I am using the latest
