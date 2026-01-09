@@ -22,7 +22,6 @@ bash-completion
 
 # : Debian Maintenance
 dput
-cdbs
 blhc
 duck
 quilt
@@ -30,6 +29,7 @@ equivs
 debsums
 tasksel
 lintian
+synaptic
 lintian-brush
 apt-rdepends
 dctrl-tools
@@ -112,7 +112,6 @@ cowsay
 toilet
 figlet
 
-
 # : Network Operations
 wget
 nmap
@@ -137,6 +136,7 @@ font-manager
 telegram-desktop
 gnome-screensaver
 simplescreenrecorder
+system-config-printer
 simple-scan
 firefox-esr
 galculator
@@ -194,7 +194,6 @@ dialog
 hwinfo
 indent
 vlock
-aide
 htop
 wipe
 shc
