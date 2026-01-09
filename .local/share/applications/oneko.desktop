@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+NoDisplay=true
+Type=Application
+Name=Oneko
+Icon=oneko_cat
+Exec=oneko -fg black -bg white
+Comment=A cat chases mouse pointer
+Terminal=false
+Actions=Dog;Stop;
+Categories=Game;Amusement
+Keywords=neko;cat;dog;chase;cursor;mouse;
+
+[Desktop Action Dog]
+Exec=oneko -dog -fg black -bg white
+Name=Oneko Dog
+Icon=oneko_dog
+
+[Desktop Action Stop]
+Exec=killall -TERM oneko
+Name=Oneko STOP
+Icon=oneko_stop

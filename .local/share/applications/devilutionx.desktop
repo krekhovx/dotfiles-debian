@@ -1,0 +1,13 @@
+[Desktop Entry]
+NoDisplay=true
+Name=DevilutionX
+GenericName=DevilutionX
+Comment=Play Diablo I
+Exec=devilutionx --diablo
+Icon=devilutionx
+Terminal=false
+Type=Application
+X-DCOP-ServiceType=Multi
+X-KDE-StartupNotify=true
+Categories=Game;RolePlaying;
+Keywords=Game;Diablo;Action;RPG;DevilutionX;

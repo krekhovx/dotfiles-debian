@@ -1,0 +1,13 @@
+[Desktop Entry]
+NoDisplay=true
+Type=Application
+Name=Quakespasm
+Exec=quakespasm
+Comment=A modernised fork of the Quake engine
+Icon=net.sourceforge.quakespasm.Quakespasm
+Actions=
+Terminal=false
+StartupNotify=true
+PrefersNonDefaultGPU=true
+Categories=Game;Shooter;
+Keywords=quake;first;person;shooter;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+NoDisplay=true
+Type=Application
+Name=VCMI Client
+Exec=vcmiclient
+Comment=Open engine for Heroes of Might and Magic 3
+Icon=vcmiclient
+Actions=
+Categories=Game;StrategyGame;
+Keywords=heroes;homm3;

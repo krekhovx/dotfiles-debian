@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+NoDisplay=true
+Type=Application
+Name=VCMI Map Editor
+Exec=vcmieditor
+Comment=Map editor for the open-source recreation of Heroes of Might & Magic III
+Icon=vcmieditor
+Actions=
+Categories=Game;StrategyGame;
+Keywords=heroes of might and magic;heroes;homm;homm3;strategy;

@@ -1,10 +1,11 @@
 [Desktop Entry]
-Version=1.1
+Version=1.0
+NoDisplay=true
 Type=Application
 Name=Quake 2
+Exec=/usr/games/quake2
 Comment=Classic first person shooter
 Icon=/usr/share/icons/hicolor/256x256/apps/quake2.png
-Exec=/usr/games/quake2
 Actions=
 Categories=ActionGame;Game;
-Keywords=first person shooter;fps;3d;deathmatch;quake ii;
+Keywords=first person shooter;fps;3d;deathmatch;quake 2;

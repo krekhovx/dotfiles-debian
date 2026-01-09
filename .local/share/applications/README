@@ -1,0 +1,9 @@
+Use the game aliases from .bash_aliases instead of desktop entries:
+'q1' for Quake
+'q2' for Quake 2
+'q3' for Quake 3
+'h3' for Heroes 3
+'d1' for Diablo 1
+'d2' for Diablo 2
+
+This is the recommended way to launch the games in my environment.

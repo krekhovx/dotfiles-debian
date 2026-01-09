@@ -1,0 +1,13 @@
+[Desktop Entry]
+NoDisplay=true
+Name=DevilutionX Hellfire
+GenericName=DevilutionX Hellfire
+Comment=Play Diablo: Hellfire
+Exec=devilutionx --hellfire
+Icon=devilutionx-hellfire
+Terminal=false
+Type=Application
+X-DCOP-ServiceType=Multi
+X-KDE-StartupNotify=true
+Categories=Game;RolePlaying;
+Keywords=Game;Diablo;Hellfire;Action;RPG;DevilutionX;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+NoDisplay=true
+Type=Application
+Name=Quake 3 Arena
+Exec=/usr/games/quake3
+Comment=Play the original Quake III Arena
+Icon=/usr/share/icons/hicolor/256x256/apps/quake.png
+Actions=
+Categories=Game;ActionGame;
+Keywords=first person shooter;fps;3d;deathmatch;ctf;capture the flag;quake 3 arena;
