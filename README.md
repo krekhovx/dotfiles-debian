@@ -92,9 +92,9 @@ Text editors, terminal multiplexer, debugger, file navigation:
 $ ./init --vim --vifm --tmux --mc --mousepad --gdb
 ```
 
-RSS feed reader, Telegram Desktop autostart, Firefox:
+RSS feed reader, Telegram Desktop autostart, Firefox, Docker:
 ```
-$ ./init --newsboat --telegram-desktop --firefox
+$ ./init --newsboat --telegram-desktop --firefox --docker
 ```
 
 Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3):
@@ -105,6 +105,11 @@ $ ./init --games
 Configure SSH server, enable QA Debian service, system default configs:
 ```
 $ ./init --ssh-server --qa-debian-service --system-defaults
+```
+
+Free the system from unnecessary packages, set korux-theme for desktop-base:
+```
+$ ./init --purge-packages --set-korux-theme
 ```
 
 The script has other options, but I think you won't need it.

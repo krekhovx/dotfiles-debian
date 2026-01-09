@@ -43,6 +43,8 @@ Usage: $(basename $0) [option]
 
   --install-packages     install environment packages from pkgs.list
 
+  --purge-packages       free the system from unnecessary packages
+
   --sources-list         sources.list installation (Trixie)
 
   --clean-home           remove default XDG dirs, apply user-dirs.*, enable init.d clean-home
@@ -101,6 +103,10 @@ Usage: $(basename $0) [option]
 
   --system-defaults      install system default configs
 
+  --docker               install new docker packages
+
+  --set-korux-theme      set korux-theme for desktop-base + remove warnings from icons
+
   -h, --help             show this help and exit
 
 EOF
@@ -130,6 +136,25 @@ for arg in "$@"; do
 
 			sudo mandb
 			sudo apt-file update
+		;;
+
+		"--purge-packages")
+			bold_message "Free the system from unnecessary packages"
+			sudo apt-get purge -y mlterm* xiterm+thai mozc* anthy* goldendict \
+			quodlibet exfalso im-config ibus mythes* myspell* hyphen* \
+			hunspell* aspell* libreoffice-l10n* firefox-esr-l10n* \
+			debian-reference-es debian-reference-it fortunes-debian-hints fortune-mod
+
+			sudo apt-get autoremove -y
+			sudo apt-get autoclean
+
+			# ibus depends on dconf-cli
+			sudo apt-get install dconf-cli
+
+			dpkg -l | awk '/^rc/{print $2}' | xargs sudo apt-get purge -y
+
+			sudo apt-file update
+			sudo mandb
 		;;
 
 		"--sources-list")
@@ -483,6 +508,43 @@ for arg in "$@"; do
 			sudo cp -v ./root/etc/default/{console-setup,grub,locale} /etc/default
 			sudo chmod 644 /etc/default/{console-setup,grub,locale}
 			sudo update-grub
+		;;
+
+		"--docker")
+			bold_message "Install new docker packages"
+
+			# Add Docker's official GPG key:
+			sudo install -m 755 -d /etc/apt/keyrings
+			sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+			sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+			# Add the repository to Apt sources:
+			echo \
+			"deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] \
+			https://download.docker.com/linux/debian bookworm stable" | \
+			sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+			sudo chmod 644 /etc/apt/sources.list.d/docker.list
+
+			sudo apt-get update
+			sudo apt-get install -y \
+					docker-ce \
+					docker-ce-cli \
+					containerd.io \
+					docker-buildx-plugin \
+					docker-compose-plugin
+		;;
+
+		"--set-korux-theme")
+			bold_message "Set korux-theme for desktop-base"
+			sudo cp -vr ./root/usr/share/desktop-base/korux-theme/ /usr/share/desktop-base
+			sudo find /usr/share/desktop-base/korux-theme -type d -exec chmod 755 {} +
+			sudo find /usr/share/desktop-base/korux-theme -type f -exec chmod 644 {} +
+			sudo update-alternatives --install /usr/share/desktop-base/active-theme \
+			desktop-theme /usr/share/desktop-base/korux-theme 50
+			sudo update-alternatives --set desktop-theme /usr/share/desktop-base/korux-theme
+			# Remove warnings from:
+			# Settings -> Appearance -> Icons
+			sudo update-icon-caches /usr/share/icons/*
 		;;
 
 		"-h" | "--help") usage ;;
