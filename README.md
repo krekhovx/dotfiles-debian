@@ -34,8 +34,8 @@ Another one (last screenshot):
 ## Description of the environment
 - <strong>OS:</strong> ```Debian 13 (Trixie)```
 - <strong>DE:</strong> ```Xfce4```
-- <strong>DM:</strong> ```LightDM```
 - <strong>WM:</strong> ```Xfwm4```
+- <strong>DM:</strong> ```LightDM```
 - <strong>Shell:</strong> ```Bash```
 - <strong>Browser:</strong> ```Firefox```
 - <strong>File Manager:</strong> ```Thunar```
@@ -49,7 +49,8 @@ Another one (last screenshot):
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
 - <strong>Desktop-base theme:</strong> ```korux-theme```
-- <strong>All Environment Packages:</strong> [./init --install-packages](https://github.com/krekhovx/dotfiles-debian/blob/master/init)
+- <strong>All Environment Packages:</strong> [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list))
+- <strong>Games:</strong> ```Diablo 1```, ```Diablo 2```, ```Heroes 3```, ```Quake 1```, ```Quake 2```, ```Quake 3```
 
 ## Installation
 - Install the latest stable Debian with Xfce.
