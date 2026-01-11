@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+NoDisplay=true
+Type=Application
+Name=Diablo II
+Icon=diablo-2
+Exec=diablo-2
+Categories=Game
