@@ -20,7 +20,8 @@
 # $ ./init --set-korux-theme
 # $ ./init --system-defaults
 # $ ./init --telegram-desktop
-# need to restart the session.
+# need to restart the session. You can use:
+# $ sudo systemctl restart display-manager
 #
 
 set -ex
