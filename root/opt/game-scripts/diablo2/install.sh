@@ -32,6 +32,7 @@ sudo apt install -y play.it
 sudo rm /etc/apt/sources.list.d/sid.list
 sudo apt update
 
+# Thanks for help, Antoine Le Gonidec <vv221@dotslashplay.it>
 git clone --branch main --depth 1 https://git.vv221.fr/play.it/games-vv221 play.it-tmp
 cd play.it-tmp/games/
 mkdir data
