@@ -200,6 +200,8 @@ for arg in "$@"; do
 			bold_message "Bash installation"
 			cp -v ./.bashrc ~/
 			cp -v ./.bash_aliases ~/
+			mkdir -p ~/.config/fastfetch &>/dev/null | true
+			cp -v ./.config/fastfetch/config.jsonc ~/.config/fastfetch
 			sudo cp -v ./root/etc/inputrc /etc
 			sudo chmod 644 /etc/inputrc
 		;;
