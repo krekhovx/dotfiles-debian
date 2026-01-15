@@ -22,7 +22,7 @@ The repository is updated frequently.
 Xfce Desktop (last screenshot):
 ![screenshot](./images/example-a.png)
 
-Another one (last screenshot):
+[fastfetch](https://github.com/fastfetch-cli/fastfetch) output:
 ![screenshot](./images/example-f.png)
 
 Another one (last screenshot):
