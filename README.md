@@ -23,6 +23,9 @@ Xfce Desktop (last screenshot):
 ![screenshot](./images/example-a.png)
 
 Another one (last screenshot):
+![screenshot](./images/example-f.png)
+
+Another one (last screenshot):
 ![screenshot](./images/example-b.png)
 
 Another one (last screenshot):
