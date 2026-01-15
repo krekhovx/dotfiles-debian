@@ -41,7 +41,7 @@ Another one (last screenshot):
 ## Description of the environment
 - <strong>OS:</strong> ```Debian 13 (Trixie)```
 - <strong>DE:</strong> ```Xfce4```
-- <strong>WM:</strong> ```Xfwm4```
+- <strong>WM:</strong> ```Xfwm4 (X11)```
 - <strong>DM:</strong> ```LightDM```
 - <strong>Shell:</strong> ```Bash```
 - <strong>Browser:</strong> ```Firefox```
