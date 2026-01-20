@@ -19,6 +19,11 @@ bye
 EOF
 }
 
+if ! dpkg -l | awk '{print $2}' | grep ^vcmi$ >/dev/null 2>&1; then
+	>&2 echo "Please, install 'vcmi' package."
+	exit 1
+fi
+
 mkdir data
 
 if [ ! -d ~/.ssh ]; then

@@ -19,6 +19,11 @@ bye
 EOF
 }
 
+if ! dpkg -l | awk '{print $2}' | grep ^quake2$ >/dev/null 2>&1; then
+	>&2 echo "Please, install 'quake2' package."
+	exit 1
+fi
+
 mkdir baseq2
 
 if [ ! -d ~/.ssh ]; then
