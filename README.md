@@ -156,6 +156,9 @@ launch QEMU with the provided disk or ISO image option.<br/>
 [treechmod.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/treechmod.sh) -
 recursively set file and directory permissions in directory using the given umask.<br/>
 
+[gpg-text-signer.sh](https://github.com/krekhovx/dotfiles-debian/blob/master/.local/bin/gpg-text-signer.sh) -
+create a text message, sign it with GPG (clearsign or detach‑sign), and prepare it for sending via NeoMutt.<br/>
+
 etc.
 
 ## My favorite fonts
