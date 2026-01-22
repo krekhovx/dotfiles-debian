@@ -93,6 +93,8 @@ Usage: $(basename $0) [option]
 
   --newsboat             rss feed reader installation
 
+  --neomutt              neomutt installation (mail reader)
+
   --telegram-desktop     telegram desktop installation autostart
 
   --firefox              install firefox clean profiles with custom user.js
@@ -436,6 +438,17 @@ for arg in "$@"; do
 				cp -v ./.newsboat/* ~/.newsboat
 			else
 				>&2 echo "Please, install 'newsboat' package"
+				exit 1
+			fi
+		;;
+
+		"--neomutt")
+			bold_message "NeoMutt installation (mail reader)"
+			if check_package neomutt; then
+				cp -v ./.neomuttrc ~/
+				cp -v ./.signature ~/
+			else
+				>&2 echo "Please, install 'neomutt' package"
 				exit 1
 			fi
 		;;

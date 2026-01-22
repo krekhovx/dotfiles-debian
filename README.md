@@ -55,9 +55,10 @@ Another one (last screenshot):
 - <strong>Terminal Multiplexer:</strong> ```Tmux```
 - <strong>Compiler:</strong> ```GCC```
 - <strong>Debuger:</strong> ```GDB Dashboard```
-- <strong>Version control system:</strong> ```Git```
+- <strong>Version Control System:</strong> ```Git```
 - <strong>Text-mode interface for Git:</strong> ```Tig```
 - <strong>RSS Feed Reader:</strong> ```Newsboat```
+- <strong>Mail Client:</strong> ```NeoMutt```
 - <strong>Desktop-base theme:</strong> ```korux-theme```
 - <strong>All Environment Packages:</strong> [pkgs.list](https://github.com/krekhovx/dotfiles-debian/blob/master/pkgs.list)
 - <strong>Games:</strong> ```Diablo 1```, ```Diablo 2```, ```Heroes 3```, ```Quake 1```, ```Quake 2```, ```Quake 3```
@@ -102,9 +103,9 @@ Text editors, terminal multiplexer, debugger, file navigation:
 $ ./init --vim --vifm --tmux --mc --mousepad --gdb
 ```
 
-RSS feed reader, Telegram Desktop autostart, Firefox, Docker:
+Telegram Desktop autostart, Firefox, Docker:
 ```
-$ ./init --newsboat --telegram-desktop --firefox --docker
+$ ./init --telegram-desktop --firefox --docker
 ```
 
 Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3):
@@ -120,6 +121,11 @@ $ ./init --ssh-server --qa-debian-service --system-defaults
 Free the system from unnecessary packages, set korux-theme for desktop-base:
 ```
 $ ./init --purge-packages --set-korux-theme
+```
+
+RSS feed reader, mail reader:
+```
+$ ./init --newsboat --neomutt
 ```
 
 The script has other options, but I think you won't need it.
