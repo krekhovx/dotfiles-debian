@@ -518,7 +518,7 @@ nnoremap mv :move<cr>
 nnoremap md :mkdir<space>
 nnoremap mf :touch<space>
 nnoremap <space> :select<cr>
-windo set viewcolumns=-{name}..,6{size},11{perms}
+set viewcolumns=-{name}..,6{size},11{perms}
 
 filetype *.jpg,*.jpeg,*.png,*.svg
     \ ristretto %f &
