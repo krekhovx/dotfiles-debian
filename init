@@ -55,7 +55,7 @@ Usage: $(basename $0) [option]
 
   --clean-home           remove default XDG dirs, apply user-dirs.*, enable init.d clean-home
 
-  --bash                 ~/.bashrc and ~/.bash_aliases installation, also /etc/inputrc
+  --bash                 ~/.bashrc and ~/.bash_aliases installation
 
   --dircolors            ~/.dircolors installation
 
@@ -204,8 +204,6 @@ for arg in "$@"; do
 			cp -v ./.bash_aliases ~/
 			mkdir -p ~/.config/fastfetch &>/dev/null | true
 			cp -v ./.config/fastfetch/config.jsonc ~/.config/fastfetch
-			sudo cp -v ./root/etc/inputrc /etc
-			sudo chmod 644 /etc/inputrc
 		;;
 
 		"--dircolors")
