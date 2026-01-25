@@ -284,9 +284,12 @@ for arg in "$@"; do
 			if check_package xfce4-terminal; then
 				mkdir ~/.config/xfce4/terminal &>/dev/null | true
 				cp -v ./.config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal
+				cp -v ./.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-terminal.xml \
+				~/.config/xfce4/xfconf/xfce-perchannel-xml
 
 				mkdir -p ~/.local/share/xfce4/terminal/colorschemes &>/dev/null | true
-				cp -v ./.local/share/xfce4/terminal/colorschemes/* ~/.local/share/xfce4/terminal/colorschemes
+				cp -v ./.local/share/xfce4/terminal/colorschemes/* \
+				~/.local/share/xfce4/terminal/colorschemes
 
 				# Delete unattractive default color schemes.
 				# Look at these ~/.local/share/xfce4/terminal/colorschemes/
