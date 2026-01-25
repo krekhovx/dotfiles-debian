@@ -22,6 +22,8 @@
 # $ ./init --telegram-desktop
 # need to restart the session. You can use:
 # $ sudo systemctl restart display-manager
+# or
+# $ reboot
 #
 
 set -ex
