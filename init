@@ -193,7 +193,7 @@ for arg in "$@"; do
 			cp -v ./.config/user-dirs.dirs ~/.config
 			cp -v ./.config/user-dirs.locale ~/.config
 
-			sudo cp ./root/etc/init.d/clean-home /etc/init.d
+			sudo cp -v ./root/etc/init.d/clean-home /etc/init.d
 			sudo chmod 755 /etc/init.d/clean-home
 
 			# Enable clean-home in startup.
@@ -292,6 +292,11 @@ for arg in "$@"; do
 				mkdir -p ~/.local/share/xfce4/terminal/colorschemes &>/dev/null | true
 				cp -v ./.local/share/xfce4/terminal/colorschemes/* \
 				~/.local/share/xfce4/terminal/colorschemes
+
+				# Install fonts.
+				mkdir ~/.fonts &>/dev/null | true
+				cp -v ./root/usr/share/fonts/truetype/pxplus-cordata/* ~/.fonts
+				fc-cache -f
 
 				# Delete unattractive default color schemes.
 				# Look at these ~/.local/share/xfce4/terminal/colorschemes/
