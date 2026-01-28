@@ -3,7 +3,6 @@ Name=Coldark
 ColorForeground=#e3eaf2
 ColorBackground=#111b27
 TabActivityColor=#6cb8e6
-ColorCursor=x
 ColorSelectionBackground=#3c526d
 ColorSelectionUseDefault=FALSE
 ColorBold=#e3eaf2
