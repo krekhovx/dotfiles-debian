@@ -16,6 +16,7 @@ case "$1" in
 		# start with a clean session next time
 
 		files=(
+			".python_history"
 			".bash_history"
 			".gdb_history"
 			".tig_history"
