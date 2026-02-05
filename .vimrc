@@ -38,11 +38,17 @@ highlight StatusLine ctermfg=250 ctermbg=238
 " show hidden files (nerdtree plugin)
 let NERDTreeShowHidden=1
 
+" retabs
+command! ToTabs set ts=4 | set noet | %retab!
+command! ToSpaces set ts=4 | set sw=4 | set sts=4 | set et | %retab
+
 map q :q<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <F3> :set hlsearch!<CR>
 map <C-f> :Files<CR>
 map <C-q> :Rg<CR>
+nnoremap <F6> :ToSpaces<CR>
+nnoremap <F5> :ToTabs<CR>
 nnoremap <C-m> :tabnew<CR>
 nnoremap <C-l> :tabnext<CR>
 nnoremap <C-h> :tabprevious<CR>
