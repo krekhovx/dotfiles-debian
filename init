@@ -422,6 +422,7 @@ for arg in "$@"; do
 			bold_message "~/.gitconfig installation"
 			if check_package git; then
 				cp -v ./.gitconfig ~/
+				cp -v ./.gitmessage ~/
 			else
 				>&2 echo "Please, install 'git' package"
 				exit 1
