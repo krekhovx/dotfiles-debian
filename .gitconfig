@@ -5,3 +5,4 @@
 
 [commit]
 	gpgSign = true
+	template = ~/.gitmessage
