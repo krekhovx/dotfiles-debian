@@ -89,7 +89,7 @@ Usage: $(basename $0) [option]
 
   --local-share          ~/.local/share installation
 
-  --gitconfig            ~/.gitconfig installation
+  --gitconfig            ~/.gitconfig and ~/.gitmessage installation
 
   --unclutter            unclutter installation
 
