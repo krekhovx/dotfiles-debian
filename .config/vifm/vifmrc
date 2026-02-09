@@ -518,7 +518,12 @@ nnoremap mv :move<cr>
 nnoremap md :mkdir<space>
 nnoremap mf :touch<space>
 nnoremap <space> :select<cr>
-set viewcolumns=-{name}..,6{size},11{perms}
 
-filetype *.jpg,*.jpeg,*.png,*.svg
-    \ ristretto %f &
+" default set of view columns
+set viewcolumns=*{name}..,6{}.
+" brief information about files
+nnoremap <silent> ,b :set viewcolumns=*{name}..,6{}.<cr>
+" detailed information about files
+nnoremap <silent> ,d :set viewcolumns=*{name}.,10{perms},12{uname},-7{gname},10{size}.,20{mtime}<cr>
+
+filetype *.jpg,*.jpeg,*.png,*.svg ristretto %f &
