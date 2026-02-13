@@ -39,6 +39,7 @@ alias g='cd ~/git'
 alias s='cd ~/sources'
 alias d='cd ~/Downloads'
 alias gl='cd ~/.local/bin'
+alias gls='cd ~/.local/share'
 alias gx='cd ~/.config/xfce4/xfconf/xfce-perchannel-xml'
 
 alias gp='cd /var/cache/pbuilder'
