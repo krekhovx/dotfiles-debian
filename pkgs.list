@@ -162,6 +162,7 @@ cppcheck
 eatmydata
 shellcheck
 pkg-config
+clang-tools
 python3-pip
 pristine-tar
 autotools-dev
