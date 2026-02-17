@@ -8,6 +8,10 @@ set from = "krekhov.dev@gmail.com"
 set imap_pass = "Google App Password"
 set smtp_pass = "Google App Password"
 
+set crypt_autosign = yes
+set crypt_use_gpgme = yes
+set pgp_sign_as = 5F2C5905519CE0A0
+
 set imap_user = "krekhov.dev@gmail.com"
 set folder = "imaps://imap.gmail.com:993"
 set smtp_url = "smtps://krekhov.dev@gmail.com@smtp.gmail.com:465"

@@ -1,8 +1,6 @@
 #!/bin/sh
 #
 # Automate the process of writing a message, signing it with GPG.
-# I use this script to GPG‑sign my email messages before sending
-# them with NeoMutt. It also lets me attach 'signature.asc' to the message.
 #
 
 usage()
