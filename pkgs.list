@@ -173,6 +173,7 @@ gobject-introspection
 
 # : Debhelper
 debhelper
+gem2deb
 dh-make
 dh-rust
 dh-python
