@@ -150,7 +150,7 @@ export BROWSER='/usr/bin/firefox'
 export TERMINAL='/usr/bin/xfce4-terminal'
 
 export DEBFULLNAME="Kirill Rekhov"
-export DEBEMAIL=krekhov.dev@gmail.com
+export DEBEMAIL="krekhov.dev@gmail.com"
 
 # function for .vimrc trick (vnoremap)
 # (vim visual mode -> ctrl+c -> ~/vbuf)
