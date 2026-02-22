@@ -9,7 +9,7 @@
 # Dotfiles with failed sums: /home/$SUDO_USER/.$(date +"%d-%m-%Y-%H:%M:%S")
 #
 
-if [ $(id -u) -ne 0 ]; then
+if [ "$(id -u)" -ne 0 ]; then
 	>&2 echo "Please, execute this script by sudo."
 	exit 1
 fi
@@ -22,12 +22,12 @@ fi
 
 usage()
 {
-if [ $1 -eq 1 ]; then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+if [ "$1" -eq 1 ]; then
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
 cat << EOF
-Usage: $(basename $0) [option]
+Usage: $(basename "$0") [option]
 Wrapper script for 'md5sum' utility.
 
   [option]

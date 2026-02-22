@@ -6,12 +6,12 @@
 
 usage()
 {
-if [ $1 -eq 1 ]; then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+if [ "$1" -eq 1 ]; then
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
 cat << EOF
-Usage: $(basename $0) [option]
+Usage: $(basename "$0") [option]
 Generate a random alphanumeric string of a specified length.
 
   [option]

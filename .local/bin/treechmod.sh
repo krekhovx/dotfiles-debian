@@ -4,12 +4,12 @@
 #
 
 usage() {
-if [ $1 -eq 1 ]; then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+if [ "$1" -eq 1 ]; then
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
 cat << EOF
-Usage: $(basename $0) <umask> <directory>
+Usage: $(basename "$0") <umask> <directory>
 Recursively set file and directory permissions in <directory> using the given umask.
 
   <umask>        3-digit octal umask value
@@ -19,8 +19,8 @@ Recursively set file and directory permissions in <directory> using the given um
   -h, --help     show this help and exit
 
   Examples:
-  $(basename $0) 022 /path/to/dir
-  $(basename $0) 077 .
+  $(basename "$0") 022 /path/to/dir
+  $(basename "$0") 077 .
 
 EOF
 

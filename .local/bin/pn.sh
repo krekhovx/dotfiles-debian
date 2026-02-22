@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Push to notes: https://github.com/krekhovx/krxnotes
-# I'm not concerned about commit descriptions in this project.
+# Simple auto-push script.
+# Just send changes without caring about commit messages.
 #
 
 git_status=$(git status -s)

@@ -10,7 +10,7 @@ generate_random_string()
 }
 
 if [ -n "$1" ]; then
-	for file in *.$1; do
+	for file in *."$1"; do
 		s=$(generate_random_string)
 
 		while [ -e "${s}.$1" ]; do
@@ -20,5 +20,5 @@ if [ -n "$1" ]; then
 		mv "$file" "${s}.$1"
 	done
 else
-	>&2 echo "usage: $ $(basename $0) '<file-format>'"
+	>&2 echo "usage: $ $(basename "$0") '<file-format>'"
 fi

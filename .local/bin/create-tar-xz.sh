@@ -8,6 +8,6 @@ if [ -n "$1" ]; then
 	archive_name="${dir%/}.tar.xz"
 	tar -cvJf "$archive_name" "$dir"
 else
-	>&2 echo "usage: $ $(basename $0) <directory>"
+	>&2 echo "usage: $ $(basename "$0") <directory>"
 	exit 1
 fi

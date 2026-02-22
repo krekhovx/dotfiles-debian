@@ -5,12 +5,12 @@
 
 usage()
 {
-if [ $1 -eq 1 ]; then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+if [ "$1" -eq 1 ]; then
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
 cat << EOF
-Usage: $(basename $0) [option]
+Usage: $(basename "$0") [option]
 Use the AES-256 (Advanced Encryption Standard) cipher for symmetric file
 encryption and decryption.
 
@@ -31,7 +31,7 @@ case "$1" in
 		usage 1
 	fi
 
-	if [ "$USER" != "$(stat -c %U $2)" ]; then
+	if [ "$USER" != "$(stat -c %U "$2")" ]; then
 		>&2 echo "'$USER' you have no perms."
 		exit 1
 	fi

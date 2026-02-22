@@ -3,7 +3,7 @@
 # Get source package URIs for a given command or path.
 #
 # Examples:
-# $ get-source-uris.sh /bin/bash
+# $ get-source-uris.sh bash
 # $ get-source-uris.sh scp
 #
 
@@ -26,6 +26,6 @@ if [ -n "$1" ]; then
 		exit 1
 	fi
 else
-	>&2 echo "usage: $ $(basename $0) <command>|<path>"
+	>&2 echo "usage: $ $(basename "$0") <command>|<path>"
 	exit 1
 fi

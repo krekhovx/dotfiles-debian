@@ -7,11 +7,11 @@
 usage()
 {
 if (( $1 )); then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
 cat << EOF
-$(echo -e "\e[96mUsage: $(basename $0) [options]\e[0m")
+$(echo -e "\e[96mUsage: $(basename "$0") [options]\e[0m")
 Multiple Git Control (simple git operations).
 
   [option]

@@ -15,7 +15,7 @@ cat << 'EOF' > "$uniq_name"
 # Comments here...
 #
 
-if (( $(id -u) -ne 0 )); then
+if (( $(id -u) != 0 )); then
 	>&2 echo "Please, execute this script by sudo."
 	exit 1
 fi
@@ -23,10 +23,10 @@ fi
 usage()
 {
 if (( $1 )); then
-	>&2 echo "Try '$(basename $0) --help' for more information."
+	>&2 echo "Try '$(basename "$0") --help' for more information."
 	exit 1
 else
-	echo "Usage: $(basename $0) [option]"
+	echo "Usage: $(basename "$0") [option]"
 	echo "Description here..."
 	echo ""
 	echo "  [option]"
