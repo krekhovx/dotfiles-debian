@@ -3,6 +3,10 @@
 # FIXME: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1104851
 # If the package is accepted into Debian, it would be great to use
 # 'game-data-packager' for installing the game in this script.
+# --
+# I have bad news (rejected):
+# https://dfsg-new-queue.debian.org/reviews/devilutionx
+# https://github.com/diasurgical/DevilutionX/discussions/7556
 
 set -e
 
