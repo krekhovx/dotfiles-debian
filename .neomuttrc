@@ -36,6 +36,7 @@ mailboxes "+[Gmail]/Отправленные"
 mailboxes "+[Gmail]/Черновики"
 mailboxes "+[Gmail]/Корзина"
 mailboxes "+[Gmail]/Спам"
+mailboxes "+[Gmail]/Вся почта"
 mailboxes "+[Gmail]/Помеченные"
 
 set mail_check = 4
@@ -70,8 +71,6 @@ unset record
 unset recall
 unset sig_dashes
 unset mime_forward
-
-#set status_on_top
 
 set quit
 set beep_new
