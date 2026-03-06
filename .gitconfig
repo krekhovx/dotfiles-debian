@@ -3,6 +3,9 @@
 	name = Kirill Rekhov
 	signingkey = 5F2C5905519CE0A0
 
+[tag]
+	gpgSign = true
+
 [commit]
 	gpgSign = true
 	template = ~/.gitmessage
