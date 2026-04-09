@@ -15,7 +15,7 @@ contributor to the Debian project.
 I'm lazy, so there's a script
 [init](https://github.com/krekhovx/dotfiles-debian/blob/master/init) which
 initialize/configure my work environment automatically. I am using the latest
-stable version of Debian with Xfce on my laptop.
+stable version of Debian amd64 with Xfce on my laptop.
 
 The repository is updated frequently.
 
