@@ -99,6 +99,8 @@ info
 man-db
 mandoc
 gcc-doc
+texlive
+latexmk
 manpages
 help2man
 linux-doc
