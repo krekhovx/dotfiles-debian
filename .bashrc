@@ -123,18 +123,7 @@ history()
 
 PROMPT_COMMAND=_bash_history_sync
 
-# color man pages
-man()
-{
-    LESS_TERMCAP_mb=$'\e[0;91m'
-    LESS_TERMCAP_md=$'\e[0;91m' \
-    LESS_TERMCAP_me=$'\e[0m' \
-    LESS_TERMCAP_se=$'\e[0m' \
-    LESS_TERMCAP_so=$'\e[07m' \
-    LESS_TERMCAP_ue=$'\e[0m' \
-    LESS_TERMCAP_us=$'\e[0;4;32m' \
-    command man "$@"
-}
+source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # set a secure umask to 077
 # files: 600 (rw-------)
