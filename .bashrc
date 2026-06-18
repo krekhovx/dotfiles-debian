@@ -123,6 +123,7 @@ history()
 
 PROMPT_COMMAND=_bash_history_sync
 
+# enable fzf ctrl+r key binding for fuzzy history search
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 # set a secure umask to 077
