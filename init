@@ -462,17 +462,6 @@ for arg in "$@"; do
 			fi
 		;;
 
-		"--telegram-desktop")
-			bold_message "Telegram Desktop installation autostart"
-			if check_package telegram-desktop; then
-				mkdir ~/.config/autostart &>/dev/null | true
-				cp -v ./.config/autostart/org.telegram.desktop.desktop ~/.config/autostart
-			else
-				>&2 echo "Please, install 'telegram-desktop' package"
-				exit 1
-			fi
-		;;
-
 		"--firefox")
 			bold_message "Install Firefox clean profiles with custom user.js"
 			if check_package firefox-esr; then

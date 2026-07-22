@@ -105,11 +105,6 @@ Text editors, terminal multiplexer, debugger, file navigation:
 $ ./init --vim --vifm --tmux --mc --mousepad --gdb
 ```
 
-Telegram Desktop autostart, Firefox, Docker:
-```
-$ ./init --telegram-desktop --firefox --docker
-```
-
 Game scripts installation (diablo1, diablo2, heroes3, quake1, quake2, quake3):
 ```
 $ ./init --games
@@ -128,6 +123,11 @@ $ ./init --purge-packages --set-korux-theme
 RSS feed reader, mail reader:
 ```
 $ ./init --newsboat --neomutt
+```
+
+Firefox, Docker:
+```
+$ ./init --firefox --docker
 ```
 
 The script has other options, but I think you won't need it.
