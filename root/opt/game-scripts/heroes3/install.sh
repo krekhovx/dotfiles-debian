@@ -11,7 +11,7 @@ umask 022
 
 download_data_files()
 {
-sshpass -p '1' sftp sftpuser@5.63.158.181 <<EOF
+sshpass -p '1' sftp sftpuser@46.183.163.28 <<EOF
 lcd data
 cd heroes3
 get -r *
@@ -32,7 +32,7 @@ if [ ! -d ~/.ssh ]; then
 fi
 
 # know this host (SFTP server with game data files)
-sftpip="5.63.158.181"
+sftpip="46.183.163.28"
 if ! ssh-keygen -F "$sftpip" >/dev/null 2>&1; then
 	ssh-keyscan -H "$sftpip" >> ~/.ssh/known_hosts
 fi
