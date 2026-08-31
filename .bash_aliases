@@ -56,6 +56,7 @@ alias gd='cd ~/git/github/krxnotes/cheat-sheets/debian'
 
 # edit
 if [ -n "$EDITOR" ]; then
+    alias vrc='$EDITOR ~/.vimrc'
     alias brc='$EDITOR ~/.bashrc'
     alias sl='sudo $EDITOR /etc/apt/sources.list'
     alias sshc='cd ~/.ssh && $EDITOR ~/.ssh/config'
@@ -90,7 +91,7 @@ alias wt='curl wttr.in' # check local weather
 # adguardvpn-cli
 vpnon()
 {
-    adguardvpn-cli connect -l Helsinki
+    adguardvpn-cli connect -l Stockholm
 }
 
 vpnoff()
